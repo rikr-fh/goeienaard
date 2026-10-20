@@ -1,0 +1,20 @@
+{%- comment -%}
+  Raster met projectkaarten. Komt automatisch uit de map _posts.
+  Gebruik: include projecten-grid.html  (of met max=3 voor alleen de nieuwste drie)
+{%- endcomment -%}
+{%- if include.max -%}{%- assign lijst = site.posts | slice: 0, include.max -%}{%- else -%}{%- assign lijst = site.posts -%}{%- endif -%}
+<div class="gn-projecten">
+  {%- for project in lijst %}
+  {%- assign p_img = nil -%}{%- if project.afbeelding contains '://' -%}{%- assign p_img = project.afbeelding -%}{%- elsif project.afbeelding -%}{%- assign _f = site.static_files | where: "path", project.afbeelding | first -%}{%- if _f -%}{%- assign p_img = project.afbeelding | relative_url -%}{%- endif -%}{%- endif -%}
+  <a class="gn-project" href="{{ project.url | relative_url }}">
+    <div class="gn-project__beeld"
+      {%- if p_img %} style="background-image: url('{{ p_img }}')"{% endif %}></div>
+    <div class="gn-project__tekst">
+      {%- if project.plaats %}<p class="gn-project__plaats">{{ project.plaats }}</p>{% endif %}
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.samenvatting | default: project.excerpt | strip_html | truncatewords: 22 }}</p>
+      <span class="gn-project__link">Bekijk project →</span>
+    </div>
+  </a>
+  {%- endfor %}
+</div>
