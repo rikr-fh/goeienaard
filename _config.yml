@@ -1,6 +1,12 @@
 theme: minima
-title: rikr-fh's personal blog
-description: This is where I share cool stuff about my life
-author: rikr-fh
+title: Studio Goeienaard
+description: Ecologisch tuinontwerp en advies 
+author: Rik
 baseurl: "/skills-github-pages"
 permalink: /projecten/:title/
+header_pages:
+    - over-ons.md
+    - werkwijze.md
+    - projecten.md
+    - contact.md
+    - ecohoeve.md
