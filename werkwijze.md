@@ -1,62 +1,91 @@
 ---
 title: Werkwijze
 permalink: /werkwijze/
-label: Werkwijze
-kop: Van eerste kennismaking tot bloeiende tuin
-intro: Een nieuwe tuin is een flinke stap. Daarom werken we in duidelijke stappen. Je weet steeds waar je staat, wat er komt en wat het kost, en na elke stap beslis je zelf of je verder wilt.
+label: Werkwijze en tarieven
+kop: Stap voor stap naar een groen paradijs
+intro: Wil je wat anders met je tuin, maar weet je niet waar je moet beginnen? Of wil je vergroenen, maar hoe pak je dat aan? Van een grote tuinverbouwing tot een kleine metamorfose, ik neem je stap voor stap mee.
 # Tijdelijke foto van Unsplash. Vervang door een eigen foto, bv. /assets/img/werkwijze.jpg
 afbeelding: https://images.unsplash.com/photo-1789119066939-e46391fb573b?w=1600&q=80&auto=format&fit=crop
 afbeelding_alt: Paarse bloemen en goudkleurige siergrassen in een border
 ---
 
-## 1. Kennismaken
+## 1. Ontmoeting
 
-We komen bij je langs en lopen samen door de tuin. We kijken naar wat er al is: de bodem, de zon en schaduw, de bomen die blijven en de plekken waar het water blijft staan. En we luisteren vooral: hoe gebruik je de tuin nu, wat mis je, en waar droom je van?
+Ik kom bij je langs om jou en je tuin beter te leren kennen. Wie ben je, en wat zoek je in een tuin? Welk gevoel moet de tuin je geven, en wat wil je er beleven? Ik vertel je ook wat een ecologische tuin is, en wat die voor jou kan betekenen.
 
-Na het gesprek weet je wat we voor je kunnen doen en wat dat ongeveer kost.
-
-- **Wat je krijgt:** een persoonlijk gesprek op locatie en een voorstel op maat.
-- **Tijd:** ongeveer [1 à 1,5 uur].
-- **Kosten:** [bijvoorbeeld: gratis, of € .. inclusief voorrijkosten].
+- **Kosten:** het eerste gesprek is gratis.
+- **Daarna:** je ontvangt een offerte op maat. Pas als je die goedkeurt, gaan we aan de slag.
 {: .gn-stapfeiten}
 
-## 2. Ontwerp
+## 2. Ontdekking
 
-Op basis van het gesprek maken we een schetsontwerp. Daarin zie je de indeling van de tuin: paden, zitplekken, borders, water en de sfeer die we voor ogen hebben. We bespreken het samen en scherpen het aan tot een definitief ontwerp, net zo lang tot het klopt.
+Je wensen werk ik uit tot een visie, de basis van het ontwerp. Ik breng in beeld wat er moet, wat er kan en waar de grenzen liggen. Daarnaast verzamel ik alle praktische informatie, zoals de ligging en afmetingen van de tuin en de grondsoort.
 
-- **Wat je krijgt:** een schetsontwerp, één of meer feedbackrondes en een definitief ontwerp op schaal.
-- **Tijd:** meestal [3 tot 6 weken], afhankelijk van de grootte van de tuin.
-- **Kosten:** [bijvoorbeeld: vanaf € .., of een vaste prijs na de kennismaking].
+## 3. Schetsontwerp
+
+Alles wat ik heb verzameld, komt samen in een voorlopig ontwerp. Ik leg je één of meer schetsen voor, en samen bespreken we de mogelijkheden. Dit is het moment om keuzes te maken en het ontwerp bij te stellen waar nodig.
+
+## 4. Definitief ontwerp
+
+Een tuin van Studio Goeienaard is meer dan een ontwerptekening. Je krijgt een complete gids die je stap voor stap meeneemt door het ontwerp, de beplanting en de materialen. Er staat ook in hoe je de tuin ecologisch aanlegt en onderhoudt, en hoe je als luie, gelukkige tuinier geniet van een tuin vol natuur.
+
+- **Wat je krijgt:** handgetekende ontwerpen en sfeerbeelden op A3, een uitgebreid beplantingsplan met bestellijst, een ontwerp voor materialen en verlichting, en een digitale gids voor aanleg en onderhoud.
 {: .gn-stapfeiten}
 
-## 3. Beplanting
+## 5. Aanleg & terugblik
 
-Planten maken de tuin. We kiezen soorten die passen bij de bodem en het licht in jouw tuin, die bloeien in verschillende seizoenen en die goed zijn voor bijen, vlinders en vogels. Je krijgt een beplantingsplan waarop precies staat wat waar komt, en hoeveel.
+Je kunt de tuin zelf aanleggen, met de tips uit de gids. Je kunt ook een hovenier inschakelen. Ik breng je graag in contact met een ecologisch hovenier, en kan helpen met de levering van biologische planten.
 
-- **Wat je krijgt:** een beplantingsplan met plantenlijst en aantallen, plus tips voor het onderhoud in de eerste jaren.
+Na een paar maanden kom ik graag langs om samen terug te kijken. Hoe heb je de samenwerking ervaren, en wat vind je van het resultaat? Dat is ook een mooi moment om de tuin op de foto te zetten.
+
+Dan kan het grote genieten beginnen. Een tuin is nooit in één keer af. Het duurt een tot twee jaar voordat de borders goed zijn dichtgegroeid, en daarna blijft de tuin in beweging. Kijk, bewonder en leer van je tuin.
+
+## Diensten
+
+### Compleet tuinontwerp
+
+Voor een groen en bloeiend paradijs rond je huis. Je doorloopt alle vijf de stappen hierboven en ontvangt:
+
+- handgetekende definitieve ontwerpen en sfeerbeelden op A3;
+- een uitgebreid beplantingsplan met bestellijst, met de belangrijkste planten in beeld;
+- een ontwerp voor materialen en verlichting;
+- een digitale gids voor ecologische aanleg en onderhoud.
+
+### Mini-tuinmetamorfose
+
+Hoeft niet de hele tuin op de schop, maar wil je wel een deel vergroenen? Wat tegels eruit en planten erin, maar welke dan? Of de ruimte slimmer gebruiken? In één middag bespreken we je wensen. Daarna ontvang je:
+
+- een handgetekend schetsontwerp met een plan voor vergroening;
+- een compact beplantingsplan met bestellijst, met de belangrijkste planten in beeld;
+- een minigids voor ecologisch tuinieren.
+
+### Beplantingsadvies
+
+Is de basis van je tuin al goed, en zoek je alleen advies over de beplanting? Ik denk graag met je mee. Je krijgt een beplantingsplan, en als je wilt zorg ik voor de levering van biologische planten.
+
+## Tarieven
+
+Na onze ontmoeting ontvang je een offerte op maat. De prijs hangt af van de grootte van de tuin, hoe complex het ontwerp is en bijkomende kosten zoals reistijd. Om je vooraf een idee te geven:
+
+- **Postzegeltje** (tot 100 m²): € 500 tot € 1.000
+- **Doorsnee tuin** (100 tot 250 m²): € 1.000 tot € 1.500
+- **Zeeën van ruimte** (vanaf 250 m²): in overleg
+- **Mini-tuinmetamorfose:** € 300
+- **Beplantingsplan en levering van planten:** in overleg
 {: .gn-stapfeiten}
 
-## 4. Aanleg
-
-Een goed ontwerp verdient een goede uitvoering. Je kunt de aanleg laten doen door een hovenier, en dan denken we mee en komen we op belangrijke momenten kijken. Je kunt de tuin ook (deels) zelf aanleggen. Dan helpen we je op weg, bijvoorbeeld bij het uitzetten van de borders of het plaatsen van de planten.
-
-- **Wat je krijgt:** begeleiding die past bij hoe je de tuin wilt aanleggen.
-{: .gn-stapfeiten}
+Alle prijzen zijn inclusief btw.
 
 ## Veelgestelde vragen
 
-### Moet ik alle stappen afnemen?
+### Moet ik de tuin daarna zelf aanleggen?
 
-Nee. Na elke stap beslis je zelf of je verder wilt. Sommige mensen willen alleen een ontwerp en gaan daarmee zelf aan de slag, anderen laten zich van begin tot eind begeleiden.
+Dat mag, maar het hoeft niet. Met de gids kun je zelf aan de slag. Je kunt ook een hovenier inschakelen; ik breng je graag in contact met een ecologisch hovenier.
 
-### Hoe lang duurt het voordat mijn tuin klaar is?
+### Hoeveel onderhoud vraagt een ecologische tuin?
 
-Van kennismaking tot aanleg duurt het meestal [2 tot 4 maanden]. Planten zetten doe je het liefst in het voor- of najaar. Daar houden we rekening mee in de planning.
+Minder dan je denkt, als je oude gewoontes durft los te laten. De eerste een tot twee jaar vraagt de tuin wat meer aandacht, tot de borders zijn dichtgegroeid. Daarna is het vooral genieten. Op de pagina [Ecologische tuin]({{ '/ecologische-tuin/' | relative_url }}) lees je hoe je een luie en gelukkige tuinier wordt.
 
-### Hoeveel onderhoud vraagt een natuurlijke tuin?
+### Is mijn tuin niet te klein?
 
-Minder dan je denkt. Een goed ontworpen beplanting sluit zich na een paar jaar, waardoor er weinig ruimte overblijft voor onkruid. De eerste twee jaar vraagt de tuin wat meer aandacht. Daarna is het vooral genieten, met een grote snoei- en opruimbeurt aan het eind van de winter.
-
-### Werken jullie ook aan kleine tuinen?
-
-Ja, graag zelfs. Juist in een kleine tuin maakt een doordacht ontwerp het grootste verschil.
+Zeker niet. Elke tegel die eruit gaat en elke plant die erin komt, telt. Voor kleine tuinen of een deel van de tuin is er de mini-tuinmetamorfose.

@@ -1,18 +1,24 @@
 theme: minima
 title: Studio Goeienaard
-description: Ecologisch tuinontwerp en advies 
-author: Rik
+description: Ecologische tuinen in en rond Tilburg
+author: Studio Goeienaard
 lang: nl
 
-# Contactgegevens (worden o.a. in de footer gebruikt)
-email: hallo@goeienaard.nl
-# regio: Midden-Brabant en omgeving   (haal het hekje weg en vul jullie werkgebied in)
+# Contactgegevens (worden o.a. in de footer en op de contactpagina gebruikt)
+email: studio@goeienaard.nl
+telefoon: 06 34 34 49 36
+instagram: https://www.instagram.com/studiogoeienaard/
+regio: Tilburg en omgeving
+# Zet hier de link naar de algemene voorwaarden zodra die online staan, bv. /assets/algemene-voorwaarden.pdf
+# voorwaarden: /assets/algemene-voorwaarden.pdf
 
 baseurl: "/skills-github-pages"
 permalink: /projecten/:title/
+
+# Het menu bovenaan (de Ecohoeve staat op de homepage en in de footer)
 header_pages:
-    - over-ons.md
     - werkwijze.md
     - projecten.md
+    - ecologische-tuin.md
+    - over-ons.md
     - contact.md
-    - ecohoeve.md

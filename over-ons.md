@@ -1,42 +1,26 @@
 ---
-title: Over ons
+title: Over
 permalink: /over-ons/
-label: Over ons
-kop: Een goede tuin begint bij de plek zelf
-intro: Studio Goeienaard ontwerpt natuurlijke tuinen die passen bij de bodem, het licht en de mensen die er wonen. Tuinen die elk seizoen iets laten zien en die met de jaren mooier worden.
-# Tijdelijke foto van Unsplash. Vervang door een eigen foto, bv. /assets/img/over-ons.jpg
+label: Over Studio Goeienaard
+kop: Geluk zit in de kleine dingen, zoals een tuin vol leven
+intro: Ik ben [naam], de ontwerper achter Studio Goeienaard. Vanuit Tilburg help ik mensen om de natuur weer uit te nodigen in hun tuin.
+# Zet hier een portretfoto neer, bv. /assets/img/over.jpg  (tot die tijd een tijdelijke foto)
 afbeelding: https://images.unsplash.com/photo-1597868165956-03a6827955b1?w=1600&q=80&auto=format&fit=crop
 afbeelding_alt: Handen die een jonge plant in de aarde zetten
 ---
 
-## Wie we zijn
+## Mijn verhaal
 
-[Vertel hier in een paar zinnen wie er achter Studio Goeienaard zit: naam, achtergrond, en hoe je bij tuinontwerp bent gekomen. Bijvoorbeeld een opleiding, een eerdere loopbaan of een eigen tuin die alles in gang zette.]
+Na een opleiding psychologie en een kantoorbaan ben ik een andere weg ingeslagen. Ik zocht werk waarmee ik echt iets kon bijdragen, aan mensen én aan de natuur. Bij mijn eerste kennismaking met ecologisch tuinontwerp was ik meteen verkocht. En waar kun je beter beginnen dan in je eigen tuin?
 
-We zijn een kleine studio, en dat merk je. Je hebt van het eerste gesprek tot de laatste plant één aanspreekpunt. Wie jouw tuin ontwerpt, kent hem ook echt.
+## Waarom ik dit doe
 
-## Waar we voor staan
+Overal waar een tegel eruit gaat en een plant erin, wint de biodiversiteit. En het betekent zoveel als mensen meer geluk vinden in hun eigen achtertuin. Dicht bij huis in contact komen met de natuur, en ervaren hoeveel ontspanning dat geeft. Insecten die rondzoemen, vogels die fluiten. Een boek lezen in de schaduw van een boom. Spelen in het gras en in de struiken.
 
-### Natuur eerst
-
-We werken het liefst met inheemse en bij-vriendelijke planten. Niet omdat het moet, maar omdat het werkt: ze zijn gewend aan onze bodem en ons klimaat, vragen minder water en onderhoud, en trekken vlinders, bijen en vogels aan. Een tuin vol leven is een tuin die zichzelf grotendeels draagt.
-
-### Ontwerpen voor het echte leven
-
-Een tuin moet passen bij hoe je woont. Waar drink je 's ochtends koffie? Waar spelen de kinderen? Hoeveel tijd wil je kwijt zijn aan onderhoud, en hoeveel juist niet? Die vragen stellen we eerst, en pas daarna pakken we het potlood.
-
-### Rustig en eerlijk
-
-Je weet vooraf wat je krijgt en wat het kost. We denken mee binnen jouw budget en zeggen het eerlijk als iets niet past of niet nodig is. Geen verrassingen achteraf.
-
-### Gemaakt om te groeien
-
-Een tuin is nooit af, en dat is juist het mooie. We ontwerpen met het oog op hoe de tuin er over vijf of tien jaar uitziet, niet alleen op de dag van aanleg.
+In mijn thuishaven Tilburg zie ik volop kansen in alle versteende tuinen. Ik geloof dat iedereen opbloeit van een tuin vol natuur. Soms heb je alleen wat hulp nodig om het voor je te zien. Hoe klein of groot je plannen ook zijn, ik denk graag met je mee.
 
 ## De naam
 
-[Vertel hier het verhaal achter de naam Goeienaard. Waar komt het woord vandaan, en wat betekent het voor jullie?]
+In een tuin van Studio Goeienaard hebben de planten, de dieren en jij het goed: iedereen heeft er een "goeie aard". Daar komt de naam vandaan.
 
-## Werkgebied
-
-[Vul in waar jullie werken, bijvoorbeeld: we werken vooral in Midden-Brabant en omgeving. Woon je verder weg? Neem gerust contact op, dan kijken we samen wat mogelijk is.]
+Samen kom je tot bloei.
