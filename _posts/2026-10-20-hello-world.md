@@ -2,7 +2,6 @@
 title: "Hello world"
 date: 2026-10-20
 layout: post
-permalink: test
 ---
 
 # Titel
