@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'nl' }}">
+  {%- include head.html -%}
+  <body>
+    {%- include header.html -%}
+    {%- comment -%}
+      Layout voor gewone pagina's (Over ons, Werkwijze, Contact, ...).
+      Bovenin een pagina kun je zetten:
+        label:       klein woord boven de titel
+        kop:         de grote titel (anders wordt 'title' gebruikt)
+        intro:       inleidende zin onder de titel
+        afbeelding:  /assets/img/bestand.jpg  (of een volledige https://-link naar een foto)
+        afbeelding_alt: korte beschrijving van de foto
+        kennismaken: false   (verbergt het blok onderaan)
+    {%- endcomment -%}
+    <main class="gn-pagina" aria-label="Inhoud">
+      <header class="gn-pagina__kop">
+        <div class="wrapper">
+          {%- if page.label %}<p class="gn-label">{{ page.label }}</p>{% endif %}
+          <h1>{{ page.kop | default: page.title | escape }}</h1>
+          {%- if page.intro %}<p class="gn-pagina__intro">{{ page.intro }}</p>{% endif %}
+        </div>
+      </header>
+
+      {%- assign beeld = nil -%}{%- if page.afbeelding contains '://' -%}{%- assign beeld = page.afbeelding -%}{%- elsif page.afbeelding -%}{%- assign _f = site.static_files | where: "path", page.afbeelding | first -%}{%- if _f -%}{%- assign beeld = page.afbeelding | relative_url -%}{%- endif -%}{%- endif -%}
+      {%- if beeld %}
+      <div class="wrapper"><img class="gn-pagina__beeld" src="{{ beeld }}" alt="{{ page.afbeelding_alt }}"></div>
+      {%- endif %}
+
+      <div class="wrapper">
+        <div class="gn-tekst">
+          {{ content }}
+        </div>
+      </div>
+
+      {%- unless page.kennismaken == false %}
+        {%- include kennismaken.html -%}
+      {%- endunless %}
+    </main>
+    {%- include footer.html -%}
+  </body>
+</html>

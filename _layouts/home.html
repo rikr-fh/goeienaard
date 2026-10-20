@@ -14,9 +14,9 @@
     <main class="gn-home" aria-label="Inhoud">
 
       {%- assign hero = page.hero -%}
-      {%- assign hero_img = site.static_files | where: "path", hero.afbeelding | first -%}
+      {%- assign hero_img = nil -%}{%- if hero.afbeelding contains '://' -%}{%- assign hero_img = hero.afbeelding -%}{%- elsif hero.afbeelding -%}{%- assign _f = site.static_files | where: "path", hero.afbeelding | first -%}{%- if _f -%}{%- assign hero_img = hero.afbeelding | relative_url -%}{%- endif -%}{%- endif -%}
       <section class="gn-hero{% if hero_img %} gn-hero--foto{% endif %}"
-        {%- if hero_img %} style="background-image: url('{{ hero.afbeelding | relative_url }}')"{% endif %}>
+        {%- if hero_img %} style="background-image: url('{{ hero_img }}')"{% endif %}>
         <div class="wrapper gn-hero__inner">
           {%- if hero.label %}<p class="gn-label">{{ hero.label }}</p>{% endif %}
           <h1 class="gn-hero__titel">{{ hero.titel }}</h1>
@@ -49,26 +49,12 @@
       </section>
       {%- endif %}
 
-      {%- assign projecten = site.posts | slice: 0, 3 -%}
-      {%- if projecten.size > 0 %}
+      {%- if site.posts.size > 0 %}
       <section class="gn-sectie gn-sectie--zacht">
         <div class="wrapper">
           <p class="gn-label">Uitgelicht werk</p>
           <h2 class="gn-sectie__titel">Tuinen die we maakten</h2>
-          <div class="gn-projecten">
-            {%- for project in projecten %}
-            {%- assign p_img = site.static_files | where: "path", project.afbeelding | first -%}
-            <a class="gn-project" href="{{ project.url | relative_url }}">
-              <div class="gn-project__beeld"
-                {%- if p_img %} style="background-image: url('{{ project.afbeelding | relative_url }}')"{% endif %}></div>
-              <div class="gn-project__tekst">
-                <h3>{{ project.title }}</h3>
-                <p>{{ project.samenvatting | default: project.excerpt | strip_html | truncatewords: 22 }}</p>
-                <span class="gn-project__link">Bekijk project →</span>
-              </div>
-            </a>
-            {%- endfor %}
-          </div>
+          {% include projecten-grid.html max=3 %}
           <p class="gn-meer"><a href="{{ '/projecten/' | relative_url }}">Alle projecten →</a></p>
         </div>
       </section>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'nl' }}">
+  {%- include head.html -%}
+  <body>
+    {%- include header.html -%}
+    {%- comment -%}
+      Layout voor projecten (bestanden in de map _posts).
+      Bovenin een project kun je zetten:
+        plaats, type, oppervlakte, jaar   (verschijnen als feitjes onder de titel)
+        samenvatting:  één zin, ook gebruikt op de projectkaart
+        afbeelding:    /assets/img/bestand.jpg
+        afbeelding_alt: korte beschrijving van de foto
+    {%- endcomment -%}
+    <main class="gn-pagina gn-project-pagina" aria-label="Inhoud">
+      <header class="gn-pagina__kop">
+        <div class="wrapper">
+          <p class="gn-label"><a href="{{ '/projecten/' | relative_url }}">Projecten</a>{% if page.plaats %} · {{ page.plaats }}{% endif %}</p>
+          <h1>{{ page.title | escape }}</h1>
+          {%- if page.samenvatting %}<p class="gn-pagina__intro">{{ page.samenvatting }}</p>{% endif %}
+          {%- if page.type or page.oppervlakte or page.jaar %}
+          <dl class="gn-feiten">
+            {%- if page.type %}<div><dt>Opdracht</dt><dd>{{ page.type }}</dd></div>{% endif %}
+            {%- if page.oppervlakte %}<div><dt>Oppervlakte</dt><dd>{{ page.oppervlakte }}</dd></div>{% endif %}
+            {%- if page.jaar %}<div><dt>Jaar</dt><dd>{{ page.jaar }}</dd></div>{% endif %}
+          </dl>
+          {%- endif %}
+        </div>
+      </header>
+
+      {%- assign beeld = nil -%}{%- if page.afbeelding contains '://' -%}{%- assign beeld = page.afbeelding -%}{%- elsif page.afbeelding -%}{%- assign _f = site.static_files | where: "path", page.afbeelding | first -%}{%- if _f -%}{%- assign beeld = page.afbeelding | relative_url -%}{%- endif -%}{%- endif -%}
+      {%- if beeld %}
+      <div class="wrapper"><img class="gn-pagina__beeld" src="{{ beeld }}" alt="{{ page.afbeelding_alt }}"></div>
+      {%- endif %}
+
+      <div class="wrapper">
+        <div class="gn-tekst">
+          {{ content }}
+          <p class="gn-terug"><a href="{{ '/projecten/' | relative_url }}">← Alle projecten</a></p>
+        </div>
+      </div>
+
+      {%- include kennismaken.html -%}
+    </main>
+    {%- include footer.html -%}
+  </body>
+</html>
