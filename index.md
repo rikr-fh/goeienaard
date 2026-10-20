@@ -11,6 +11,7 @@ hero_image: /assets/img/hero-tuin.jpg
   {% for post in site.posts %}
     <li>
       <a href="/posts/{{ post.url }}">{{ post.title }}</a>
+      {{ post.excerpt }}
     </li>
   {% endfor %}
 </ul>
