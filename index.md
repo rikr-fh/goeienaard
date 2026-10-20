@@ -10,7 +10,7 @@ hero_image: /assets/img/hero-tuin.jpg
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="/skills-github-pages/posts{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       {{ post.excerpt }}
     </li>
   {% endfor %}
