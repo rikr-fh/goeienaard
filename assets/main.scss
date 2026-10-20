@@ -117,7 +117,16 @@ hr { border: none; height: 2rem; }          /* geen harde lijnen, maar witruimte
   background: rgba(244, 239, 230, .94);
   -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
 }
-.site-nav { background-color: var(--zand); border-color: var(--lijn); }
+.site-nav { background: none; } /* nav-items transparant, zodat ze één geheel vormen met de header */
+
+/* ───────────── Actieve pagina in het menu ───────────── */
+.site-nav .page-link { position: relative; color: #2B2B26; transition: color .15s ease; }
+.site-nav .page-link:hover { color: var(--groen); text-decoration: none; }
+.site-nav .page-link.is-actief { color: var(--groen); font-weight: 500; }
+.site-nav .page-link.is-actief::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -6px;
+  height: 2px; border-radius: 2px; background: var(--klei);
+}
 /* ───────────── Mobiel menu: schermvullend ───────────── */
 @media (max-width: 600px) {
   /* Geen blur op mobiel: anders kan het menu niet over het hele scherm */
@@ -156,6 +165,10 @@ hr { border: none; height: 2rem; }          /* geen harde lijnen, maar witruimte
     color: var(--groen); padding: .35rem 0; margin: 0;
     text-decoration: none;
   }
+  /* Actief op mobiel: terracotta met een klein streepje ervoor */
+  .site-nav .trigger .page-link.is-actief { color: var(--klei); font-weight: 400; display: flex; align-items: center; gap: .75rem; }
+  .site-nav .trigger .page-link.is-actief::after { display: none; }
+  .site-nav .trigger .page-link.is-actief::before { content: ""; width: 1.25rem; height: 2px; background: var(--klei); border-radius: 2px; }
   .site-nav .trigger .page-link:hover,
   .site-nav .trigger .page-link:focus { color: var(--klei); }
 
