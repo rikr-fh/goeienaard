@@ -5,9 +5,10 @@
 {%- if include.max -%}{%- assign lijst = site.posts | slice: 0, include.max -%}{%- else -%}{%- assign lijst = site.posts -%}{%- endif -%}
 <div class="gn-projecten">
   {%- for project in lijst %}
-  {%- assign p_img = nil -%}{%- if project.afbeelding contains '://' -%}{%- assign p_img = project.afbeelding -%}{%- elsif project.afbeelding -%}{%- assign _f = site.static_files | where: "path", project.afbeelding | first -%}{%- if _f -%}{%- assign p_img = project.afbeelding | relative_url -%}{%- endif -%}{%- endif -%}
+  {%- assign p_img = nil -%}{%- if project.afbeelding contains '://' -%}{%- assign p_img = project.afbeelding -%}{%- endif -%}
+  {%- unless p_img -%}{%- assign _map = project.fotomap | default: project.slug -%}{%- assign _pad = '/assets/img/projecten/' | append: _map | append: '/' -%}{%- assign fotos = site.static_files | where_exp: 'f', 'f.path contains _pad' | sort: 'path' -%}{%- if fotos.size > 0 -%}{%- assign p_img = fotos[0].path | relative_url -%}{%- endif -%}{%- endunless -%}
   <a class="gn-project" href="{{ project.url | relative_url }}">
-    <div class="gn-project__beeld"
+    <div class="gn-project__beeld{% if project.voorbeeldfotos and p_img %} gn-project__beeld--voorbeeld{% endif %}"
       {%- if p_img %} style="background-image: url('{{ p_img }}')"{% endif %}></div>
     <div class="gn-project__tekst">
       {%- if project.plaats %}<p class="gn-project__plaats">{{ project.plaats }}</p>{% endif %}
