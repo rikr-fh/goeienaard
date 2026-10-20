@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'nl' }}">
+  {%- include head.html -%}
+  <body>
+    {%- include header.html -%}
+
+    {%- comment -%}
+      Homepage van Goeienaard.
+      De teksten staan bovenin index.md — daar pas je ze aan, niet hier.
+      Een afbeelding wordt pas getoond als het bestand echt bestaat;
+      tot die tijd staat er een rustig groen vlak.
+    {%- endcomment -%}
+
+    <main class="gn-home" aria-label="Inhoud">
+
+      {%- assign hero = page.hero -%}
+      {%- assign hero_img = site.static_files | where: "path", hero.afbeelding | first -%}
+      <section class="gn-hero{% if hero_img %} gn-hero--foto{% endif %}"
+        {%- if hero_img %} style="background-image: url('{{ hero.afbeelding | relative_url }}')"{% endif %}>
+        <div class="wrapper gn-hero__inner">
+          {%- if hero.label %}<p class="gn-label">{{ hero.label }}</p>{% endif %}
+          <h1 class="gn-hero__titel">{{ hero.titel }}</h1>
+          <p class="gn-hero__tekst">{{ hero.tekst }}</p>
+          <div class="gn-acties">
+            <a class="gn-knop" href="{{ hero.knop.link | relative_url }}">{{ hero.knop.tekst }}</a>
+            {%- if hero.link %}
+            <a class="gn-knop gn-knop--licht" href="{{ hero.link.link | relative_url }}">{{ hero.link.tekst }}</a>
+            {%- endif %}
+          </div>
+        </div>
+      </section>
+
+      {%- if page.diensten %}
+      <section class="gn-sectie">
+        <div class="wrapper">
+          <p class="gn-label">Wat we doen</p>
+          <h2 class="gn-sectie__titel">{{ page.diensten_titel | default: "Van eerste schets tot bloeiende tuin" }}</h2>
+          <div class="gn-kaarten">
+            {%- for dienst in page.diensten %}
+            <article class="gn-kaart">
+              <span class="gn-kaart__nr">0{{ forloop.index }}</span>
+              <h3>{{ dienst.titel }}</h3>
+              <p>{{ dienst.tekst }}</p>
+            </article>
+            {%- endfor %}
+          </div>
+          <p class="gn-meer"><a href="{{ '/werkwijze/' | relative_url }}">Meer over onze werkwijze →</a></p>
+        </div>
+      </section>
+      {%- endif %}
+
+      {%- assign projecten = site.posts | slice: 0, 3 -%}
+      {%- if projecten.size > 0 %}
+      <section class="gn-sectie gn-sectie--zacht">
+        <div class="wrapper">
+          <p class="gn-label">Uitgelicht werk</p>
+          <h2 class="gn-sectie__titel">Tuinen die we maakten</h2>
+          <div class="gn-projecten">
+            {%- for project in projecten %}
+            {%- assign p_img = site.static_files | where: "path", project.afbeelding | first -%}
+            <a class="gn-project" href="{{ project.url | relative_url }}">
+              <div class="gn-project__beeld"
+                {%- if p_img %} style="background-image: url('{{ project.afbeelding | relative_url }}')"{% endif %}></div>
+              <div class="gn-project__tekst">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.samenvatting | default: project.excerpt | strip_html | truncatewords: 22 }}</p>
+                <span class="gn-project__link">Bekijk project →</span>
+              </div>
+            </a>
+            {%- endfor %}
+          </div>
+          <p class="gn-meer"><a href="{{ '/projecten/' | relative_url }}">Alle projecten →</a></p>
+        </div>
+      </section>
+      {%- endif %}
+
+      {%- if page.stappen %}
+      <section class="gn-sectie">
+        <div class="wrapper">
+          <p class="gn-label">Zo werken we</p>
+          <h2 class="gn-sectie__titel">In vier stappen naar jouw tuin</h2>
+          <ol class="gn-stappen">
+            {%- for stap in page.stappen %}
+            <li>
+              <h3>{{ stap.titel }}</h3>
+              <p>{{ stap.tekst }}</p>
+            </li>
+            {%- endfor %}
+          </ol>
+        </div>
+      </section>
+      {%- endif %}
+
+      {%- if page.ecohoeve %}
+      <section class="gn-sectie">
+        <div class="wrapper">
+          <div class="gn-ecohoeve">
+            <p class="gn-label">Ecohoeve</p>
+            <h2>{{ page.ecohoeve.titel }}</h2>
+            <p>{{ page.ecohoeve.tekst }}</p>
+            <a class="gn-knop gn-knop--licht" href="{{ '/ecohoeve/' | relative_url }}">{{ page.ecohoeve.knop | default: "Lees over de Ecohoeve" }}</a>
+          </div>
+        </div>
+      </section>
+      {%- endif %}
+
+      {%- if page.kennismaken %}
+      <section class="gn-sectie gn-cta">
+        <div class="wrapper">
+          <h2>{{ page.kennismaken.titel }}</h2>
+          <p>{{ page.kennismaken.tekst }}</p>
+          <div class="gn-acties">
+            <a class="gn-knop" href="mailto:{{ page.kennismaken.email }}">Mail {{ page.kennismaken.email }}</a>
+            <a class="gn-knop gn-knop--licht" href="{{ '/contact/' | relative_url }}">Naar contact</a>
+          </div>
+          {%- if page.kennismaken.geruststelling %}
+          <p class="gn-cta__klein">{{ page.kennismaken.geruststelling }}</p>
+          {%- endif %}
+        </div>
+      </section>
+      {%- endif %}
+
+      {{ content }}
+    </main>
+
+    {%- include footer.html -%}
+  </body>
+</html>
