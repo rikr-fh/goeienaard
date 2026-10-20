@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: page
 title: Goeienaard — tuinontwerpstudio
 description: Tuinen die kloppen. Natuurlijk, doordacht en gemaakt om in te leven.
 hero_image: /assets/img/hero-tuin.jpg
