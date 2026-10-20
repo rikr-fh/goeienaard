@@ -22,7 +22,7 @@ hero_image: /assets/img/hero-tuin.jpg
 
 Goeienaard ontwerpt tuinen die passen bij de plek, bij de natuur en bij de mensen die erin leven. Natuurlijk, doordacht en gemaakt om jaren mee te groeien.
 
-[Bekijk ons werk](/projecten/) · [Plan een kennismaking](/contact/)
+[Bekijk ons werk]({{ '/projecten/' | relative_url }}) · [Plan een kennismaking]({{ '/contact/' | relative_url }})
 
 ---
 
@@ -37,21 +37,21 @@ Inheemse en bij-vriendelijke planten die het hele jaar iets te bieden hebben, en
 **Begeleiding bij aanleg**
 We denken mee met de hovenier of helpen je zelf op weg, zodat het ontwerp ook echt zo in de grond komt.
 
-[Meer over onze werkwijze](/werkwijze/)
+[Meer over onze werkwijze]({{ '/werkwijze/' | relative_url }})
 
 ---
 
 ## Uitgelicht werk
 
-![Natuurlijke stadstuin met grassen en vaste planten](/assets/img/project-stadstuin.jpg)
+![Natuurlijke stadstuin met grassen en vaste planten]({{ '/assets/img/project-stadstuin.jpg' | relative_url }})
 **Stadstuin [plaats]** — Een kleine tuin die groter voelt, met grassen, een zitplek in de ochtendzon en ruimte voor vlinders.
-[Bekijk project](/projecten/stadstuin/)
+[Bekijk project]({{ '/projecten/stadstuin/' | relative_url }})
 
-![Boerderijtuin met borders en fruitbomen](/assets/img/project-boerderijtuin.jpg)
+![Boerderijtuin met borders en fruitbomen]({{ '/assets/img/project-boerderijtuin.jpg' | relative_url }})
 **Boerderijtuin [plaats]** — Borders, fruitbomen en een moestuin rond een oude boerderij, met respect voor wat er al stond.
-[Bekijk project](/projecten/boerderijtuin/)
+[Bekijk project]({{ '/projecten/boerderijtuin/' | relative_url }})
 
-[Alle projecten](/projecten/)
+[Alle projecten]({{ '/projecten/' | relative_url }})
 
 ---
 
@@ -68,7 +68,7 @@ We denken mee met de hovenier of helpen je zelf op weg, zodat het ontwerp ook ec
 
 We dromen van een plek waar wonen, tuinieren en natuur samenkomen. Benieuwd naar dat verhaal?
 
-[Lees over de Ecohoeve](/ecohoeve/)
+[Lees over de Ecohoeve]({{ '/ecohoeve/' | relative_url }})
 
 ---
 
@@ -76,5 +76,4 @@ We dromen van een plek waar wonen, tuinieren en natuur samenkomen. Benieuwd naar
 
 Vertel ons over je tuin. We nemen binnen een paar werkdagen contact op.
 
-[hallo@goeienaard.nl](mailto:hallo@goeienaard.nl) · [Naar contact](/contact/)
-
+[hallo@goeienaard.nl](mailto:hallo@goeienaard.nl) · [Naar contact]({{ '/contact/' | relative_url }})
