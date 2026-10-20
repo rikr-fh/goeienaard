@@ -13,7 +13,8 @@ hero:
   label: Ecologisch tuinontwerp
   titel: Tuinen die kloppen
   tekst: Goeienaard ontwerpt tuinen die passen bij de plek, bij de natuur en bij de mensen die erin leven. Natuurlijk, doordacht en gemaakt om jaren mee te groeien.
-  afbeelding: /assets/img/hero-tuin.jpg
+  # Tijdelijke foto van Unsplash. Vervang door een eigen foto, bv. /assets/img/hero-tuin.jpg
+  afbeelding: https://images.unsplash.com/photo-1707844856910-7518d10d95f7?w=2000&q=80&auto=format&fit=crop
   knop:
     tekst: Plan een kennismaking
     link: /contact/

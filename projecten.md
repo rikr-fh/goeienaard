@@ -1,16 +1,9 @@
 ---
 title: Projecten
 permalink: /projecten/
+label: Projecten
+kop: Tuinen die we maakten
+intro: Elke tuin begint met een andere vraag. Hier zie je een selectie van ons werk, van kleine stadstuinen tot landelijke tuinen rond een boerderij, met het verhaal erachter.
 ---
- 
-# Projecten
- 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      {{ post.excerpt }}
-    </li>
-  {% endfor %}
-</ul>
- 
+
+{% include projecten-grid.html %}

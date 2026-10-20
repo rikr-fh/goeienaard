@@ -2,6 +2,12 @@ theme: minima
 title: Studio Goeienaard
 description: Ecologisch tuinontwerp en advies 
 author: Rik
+lang: nl
+
+# Contactgegevens (worden o.a. in de footer gebruikt)
+email: hallo@goeienaard.nl
+# regio: Midden-Brabant en omgeving   (haal het hekje weg en vul jullie werkgebied in)
+
 baseurl: "/skills-github-pages"
 permalink: /projecten/:title/
 header_pages:
