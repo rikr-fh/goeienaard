@@ -1,0 +1,91 @@
+{%- comment -%}
+  Lightbox: klik op een projectfoto om hem groot te bekijken.
+  Werkt met pijltjestoetsen, Escape, en vegen op telefoon.
+{%- endcomment -%}
+<div class="gn-lb" role="dialog" aria-modal="true" aria-label="Foto's bekijken" hidden>
+  <button class="gn-lb__knop gn-lb__sluit" type="button" aria-label="Sluiten">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </button>
+  <button class="gn-lb__knop gn-lb__vorige" type="button" aria-label="Vorige foto">
+    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <figure class="gn-lb__figuur">
+    <img class="gn-lb__img" alt="">
+    <figcaption class="gn-lb__onder">
+      <span class="gn-lb__tekst"></span>
+      <span class="gn-lb__teller"></span>
+    </figcaption>
+  </figure>
+  <button class="gn-lb__knop gn-lb__volgende" type="button" aria-label="Volgende foto">
+    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</div>
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox]'));
+  var lb = document.querySelector('.gn-lb');
+  if (!links.length || !lb) return;
+  var img = lb.querySelector('.gn-lb__img'), tekst = lb.querySelector('.gn-lb__tekst'),
+      teller = lb.querySelector('.gn-lb__teller'), sluit = lb.querySelector('.gn-lb__sluit'),
+      vorige = lb.querySelector('.gn-lb__vorige'), volgende = lb.querySelector('.gn-lb__volgende');
+  var huidig = 0, terugFocus = null, startX = null;
+  var meer = links.length > 1;
+  vorige.hidden = volgende.hidden = !meer;
+
+  function toon(i) {
+    huidig = (i + links.length) % links.length;
+    var a = links[huidig], bron = a.querySelector('img');
+    img.classList.add('is-laden');
+    img.onload = function () { img.classList.remove('is-laden'); };
+    img.src = a.getAttribute('href');
+    img.alt = bron ? bron.alt : '';
+    var bij = a.getAttribute('data-caption') || '';
+    tekst.textContent = bij;
+    teller.textContent = meer ? (huidig + 1) + ' / ' + links.length : '';
+    lb.classList.toggle('heeft-tekst', !!bij);
+    [huidig - 1, huidig + 1].forEach(function (j) {            // buren alvast laden
+      var n = links[(j + links.length) % links.length]; (new Image()).src = n.getAttribute('href');
+    });
+  }
+  function open(i) {
+    terugFocus = document.activeElement;
+    toon(i);
+    lb.hidden = false;
+    document.documentElement.classList.add('gn-lb-open');
+    requestAnimationFrame(function () { lb.classList.add('is-open'); });
+    sluit.focus();
+  }
+  function dicht() {
+    lb.classList.remove('is-open');
+    document.documentElement.classList.remove('gn-lb-open');
+    setTimeout(function () { lb.hidden = true; img.removeAttribute('src'); }, 250);
+    if (terugFocus) terugFocus.focus();
+  }
+
+  links.forEach(function (a, i) {
+    a.addEventListener('click', function (e) { e.preventDefault(); open(i); });
+  });
+  sluit.addEventListener('click', dicht);
+  vorige.addEventListener('click', function (e) { e.stopPropagation(); toon(huidig - 1); });
+  volgende.addEventListener('click', function (e) { e.stopPropagation(); toon(huidig + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) dicht(); });
+  document.addEventListener('keydown', function (e) {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') dicht();
+    else if (e.key === 'ArrowLeft' && meer) toon(huidig - 1);
+    else if (e.key === 'ArrowRight' && meer) toon(huidig + 1);
+    else if (e.key === 'Tab') {                                 // focus binnen de lightbox houden
+      var f = Array.prototype.filter.call(lb.querySelectorAll('button'), function (b) { return !b.hidden; });
+      var eerste = f[0], laatste = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === eerste) { e.preventDefault(); laatste.focus(); }
+      else if (!e.shiftKey && document.activeElement === laatste) { e.preventDefault(); eerste.focus(); }
+    }
+  });
+  lb.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (startX === null || !meer) return;
+    var dx = e.changedTouches[0].clientX - startX; startX = null;
+    if (Math.abs(dx) > 50) toon(huidig + (dx < 0 ? 1 : -1));
+  });
+})();
+</script>
