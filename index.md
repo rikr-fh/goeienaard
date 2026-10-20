@@ -5,6 +5,18 @@ description: Tuinen die kloppen. Natuurlijk, doordacht en gemaakt om in te leven
 hero_image: /assets/img/hero-tuin.jpg
 ---
 
+# Posts
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+---
+
 # Tuinen die kloppen
 
 Goeienaard ontwerpt tuinen die passen bij de plek, bij de natuur en bij de mensen die erin leven. Natuurlijk, doordacht en gemaakt om jaren mee te groeien.
