@@ -1,0 +1,18 @@
+---
+---
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Inter:wght@400;500&display=swap');
+@import "minima";
+
+:root { --groen: #3F5A3A; --zand: #F4EFE6; --klei: #B5714B; }
+
+body { background: var(--zand); color: #2B2B26; font-family: Inter, sans-serif; line-height: 1.7; }
+
+h1, h2, h3, .site-title { font-family: Fraunces, serif; color: var(--groen); }
+
+.site-header { border-top: none; background: var(--zand); }
+
+a { color: var(--klei); }
+
+hr { border: none; height: 2rem; }          /* geen harde lijnen, maar witruimte */
+
+.wrapper { max-width: 960px; }
