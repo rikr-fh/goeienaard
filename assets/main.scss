@@ -248,3 +248,24 @@ a:visited { color: var(--klei); }
   .gn-pagina__beeld { aspect-ratio: 4 / 3; border-radius: 14px; }
   .gn-footer__grid { grid-template-columns: 1fr; gap: 1.5rem; }
 }
+
+/* ───────────── Projectfoto's ───────────── */
+.gn-foto { position: relative; margin: 0; }
+.gn-foto img { display: block; width: 100%; border-radius: 16px; }
+.gn-foto--groot .gn-pagina__beeld { margin-bottom: 1rem; }
+.gn-galerij { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 0 0 1rem; }
+.gn-galerij img { aspect-ratio: 4 / 3; object-fit: cover; }
+.gn-tekst--slot { padding-top: 0; }
+.gn-tekst--slot .gn-terug { margin-top: 1rem; }
+
+/* Label "Voorbeeldfoto" zolang er tijdelijke foto's staan */
+.gn-foto__label,
+.gn-project__beeld--voorbeeld::after {
+  position: absolute; left: 12px; top: 12px;
+  background: rgba(244, 239, 230, .92); color: #2B2B26;
+  font-size: .72rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
+  padding: .3rem .6rem; border-radius: 999px;
+}
+.gn-foto--groot .gn-foto__label { top: 14px; left: 14px; }
+.gn-project__beeld { position: relative; }
+.gn-project__beeld--voorbeeld::after { content: "Voorbeeldfoto"; }
