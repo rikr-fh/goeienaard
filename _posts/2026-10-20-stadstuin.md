@@ -18,7 +18,7 @@ afbeelding_alt: Natuurlijke stadstuin met grassen en vaste planten
 
 ## Het ontwerp
 
-[Welke keuzes hebben jullie gemaakt, en waarom? Bijvoorbeeld: de zitplek verplaatst naar de ochtendzon, tegels eruit en grassen en vaste planten erin, en een smal pad dat de tuin dieper laat lijken.]
+[Welke keuzes heb je gemaakt, en waarom? Bijvoorbeeld: de zitplek verplaatst naar de ochtendzon, tegels eruit en grassen en vaste planten erin, en een smal pad dat de tuin dieper laat lijken.]
 
 ## Het resultaat
 
