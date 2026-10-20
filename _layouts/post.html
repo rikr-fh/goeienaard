@@ -8,8 +8,10 @@
       Bovenin een project kun je zetten:
         plaats, type, oppervlakte, jaar   (verschijnen als feitjes onder de titel)
         samenvatting:  één zin, ook gebruikt op de projectkaart
-        afbeelding:    /assets/img/bestand.jpg
-        afbeelding_alt: korte beschrijving van de foto
+        fotomap:       naam van de map met foto's in assets/img/projecten/
+                       (alle foto's in die map verschijnen vanzelf; de eerste is de grote foto)
+        voorbeeldfotos: true   (toont het label "Voorbeeldfoto" — haal weg als het eigen foto's zijn)
+        afbeelding_alt: korte beschrijving van de grote foto
     {%- endcomment -%}
     <main class="gn-pagina gn-project-pagina" aria-label="Inhoud">
       <header class="gn-pagina__kop">
@@ -27,14 +29,31 @@
         </div>
       </header>
 
-      {%- assign beeld = nil -%}{%- if page.afbeelding contains '://' -%}{%- assign beeld = page.afbeelding -%}{%- elsif page.afbeelding -%}{%- assign _f = site.static_files | where: "path", page.afbeelding | first -%}{%- if _f -%}{%- assign beeld = page.afbeelding | relative_url -%}{%- endif -%}{%- endif -%}
-      {%- if beeld %}
-      <div class="wrapper"><img class="gn-pagina__beeld" src="{{ beeld }}" alt="{{ page.afbeelding_alt }}"></div>
+      {%- assign _map = page.fotomap | default: page.slug -%}{%- assign _pad = '/assets/img/projecten/' | append: _map | append: '/' -%}{%- assign fotos = site.static_files | where_exp: 'f', 'f.path contains _pad' | sort: 'path' -%}
+      {%- if fotos.size > 0 %}
+      <div class="wrapper">
+        <figure class="gn-foto gn-foto--groot">
+          <img class="gn-pagina__beeld" src="{{ fotos[0].path | relative_url }}" alt="{{ page.afbeelding_alt | default: page.title }}">
+          {%- if page.voorbeeldfotos %}<figcaption class="gn-foto__label">Voorbeeldfoto</figcaption>{% endif %}
+        </figure>
+      </div>
       {%- endif %}
 
       <div class="wrapper">
         <div class="gn-tekst">
           {{ content }}
+        </div>
+        {%- if fotos.size > 1 %}
+        <div class="gn-galerij">
+          {%- for foto in fotos offset: 1 %}
+          <figure class="gn-foto">
+            <img src="{{ foto.path | relative_url }}" alt="{{ page.title }} — foto {{ forloop.index | plus: 1 }}" loading="lazy">
+            {%- if page.voorbeeldfotos %}<figcaption class="gn-foto__label">Voorbeeldfoto</figcaption>{% endif %}
+          </figure>
+          {%- endfor %}
+        </div>
+        {%- endif %}
+        <div class="gn-tekst gn-tekst--slot">
           <p class="gn-terug"><a href="{{ '/projecten/' | relative_url }}">← Alle projecten</a></p>
         </div>
       </div>
