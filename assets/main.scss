@@ -269,3 +269,14 @@ a:visited { color: var(--klei); }
 .gn-foto--groot .gn-foto__label { top: 14px; left: 14px; }
 .gn-project__beeld { position: relative; }
 .gn-project__beeld--voorbeeld::after { content: "Voorbeeldfoto"; }
+
+/* ───────────── Visie, prijzen en slogan ───────────── */
+.gn-visie { padding-bottom: 0; }
+.gn-visie__tekst { font-size: 1.25rem; line-height: 1.65; max-width: 42rem; margin: -1rem 0 0; }
+.gn-kaart { display: flex; flex-direction: column; }
+.gn-kaart__prijs { margin-top: auto !important; padding-top: 1rem; font-family: Fraunces, serif; font-size: 1.15rem; color: var(--klei); }
+.gn-slogan { font-family: Fraunces, serif; font-style: italic; font-size: 1.15rem; color: var(--klei); margin-bottom: .5rem !important; }
+.gn-footer__slogan { font-family: Fraunces, serif; font-style: italic; color: var(--klei); margin-top: .75rem !important; }
+.gn-footer__onder a { color: inherit; }
+.gn-stappen { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; }
+.gn-hero__titel { max-width: 15ch; }
