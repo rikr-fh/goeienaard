@@ -30,10 +30,23 @@
         </div>
       </section>
 
+      {%- if page.visie %}
+      <section class="gn-sectie gn-visie">
+        <div class="wrapper">
+          <p class="gn-label">{{ page.visie.label }}</p>
+          <h2 class="gn-sectie__titel">{{ page.visie.titel }}</h2>
+          <p class="gn-visie__tekst">{{ page.visie.tekst }}</p>
+          {%- if page.visie.link %}
+          <p class="gn-meer"><a href="{{ page.visie.link.url | relative_url }}">{{ page.visie.link.tekst }} →</a></p>
+          {%- endif %}
+        </div>
+      </section>
+      {%- endif %}
+
       {%- if page.diensten %}
       <section class="gn-sectie">
         <div class="wrapper">
-          <p class="gn-label">Wat we doen</p>
+          <p class="gn-label">{{ page.diensten_label | default: "Wat ik doe" }}</p>
           <h2 class="gn-sectie__titel">{{ page.diensten_titel | default: "Van eerste schets tot bloeiende tuin" }}</h2>
           <div class="gn-kaarten">
             {%- for dienst in page.diensten %}
@@ -41,10 +54,11 @@
               <span class="gn-kaart__nr">0{{ forloop.index }}</span>
               <h3>{{ dienst.titel }}</h3>
               <p>{{ dienst.tekst }}</p>
+              {%- if dienst.prijs %}<p class="gn-kaart__prijs">{{ dienst.prijs }}</p>{% endif %}
             </article>
             {%- endfor %}
           </div>
-          <p class="gn-meer"><a href="{{ '/werkwijze/' | relative_url }}">Meer over onze werkwijze →</a></p>
+          <p class="gn-meer"><a href="{{ '/werkwijze/' | relative_url }}">{{ page.diensten_link | default: "Meer over de werkwijze" }} →</a></p>
         </div>
       </section>
       {%- endif %}
@@ -52,8 +66,8 @@
       {%- if site.posts.size > 0 %}
       <section class="gn-sectie gn-sectie--zacht">
         <div class="wrapper">
-          <p class="gn-label">Uitgelicht werk</p>
-          <h2 class="gn-sectie__titel">Tuinen die we maakten</h2>
+          <p class="gn-label">Projecten</p>
+          <h2 class="gn-sectie__titel">{{ page.projecten_titel | default: "Tuinen van Studio Goeienaard" }}</h2>
           {% include projecten-grid.html max=3 %}
           <p class="gn-meer"><a href="{{ '/projecten/' | relative_url }}">Alle projecten →</a></p>
         </div>
@@ -63,8 +77,8 @@
       {%- if page.stappen %}
       <section class="gn-sectie">
         <div class="wrapper">
-          <p class="gn-label">Zo werken we</p>
-          <h2 class="gn-sectie__titel">In vier stappen naar jouw tuin</h2>
+          <p class="gn-label">Werkwijze</p>
+          <h2 class="gn-sectie__titel">{{ page.stappen_titel | default: "Zo komen we samen tot een ontwerp" }}</h2>
           <ol class="gn-stappen">
             {%- for stap in page.stappen %}
             <li>
@@ -93,6 +107,7 @@
       {%- if page.kennismaken %}
       <section class="gn-sectie gn-cta">
         <div class="wrapper">
+          {%- if page.kennismaken.slogan %}<p class="gn-slogan">{{ page.kennismaken.slogan }}</p>{% endif %}
           <h2>{{ page.kennismaken.titel }}</h2>
           <p>{{ page.kennismaken.tekst }}</p>
           <div class="gn-acties">

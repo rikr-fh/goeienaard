@@ -12,6 +12,9 @@
                        (alle foto's in die map verschijnen vanzelf; de eerste is de grote foto)
         voorbeeldfotos: true   (toont het label "Voorbeeldfoto" — haal weg als het eigen foto's zijn)
         afbeelding_alt: korte beschrijving van de grote foto
+        bijschriften:  (optioneel) een tekst per foto, bijvoorbeeld:
+                         "01.jpg": De nieuwe border in juni, vol zonnehoed en kattenstaart
+                         "02.jpg": Het bankje in de ochtendzon
     {%- endcomment -%}
     <main class="gn-pagina gn-project-pagina" aria-label="Inhoud">
       <header class="gn-pagina__kop">
@@ -31,10 +34,16 @@
 
       {%- assign _map = page.fotomap | default: page.slug -%}{%- assign _pad = '/assets/img/projecten/' | append: _map | append: '/' -%}{%- assign fotos = site.static_files | where_exp: 'f', 'f.path contains _pad' | sort: 'path' -%}
       {%- if fotos.size > 0 %}
+      {%- assign foto = fotos[0] -%}
+      {%- assign bijschrift = page.bijschriften[foto.name] -%}
       <div class="wrapper">
         <figure class="gn-foto gn-foto--groot">
-          <img class="gn-pagina__beeld" src="{{ fotos[0].path | relative_url }}" alt="{{ page.afbeelding_alt | default: page.title }}">
-          {%- if page.voorbeeldfotos %}<figcaption class="gn-foto__label">Voorbeeldfoto</figcaption>{% endif %}
+          <a class="gn-foto__link" href="{{ foto.path | relative_url }}" data-lightbox="project" data-caption="{{ bijschrift | escape }}" aria-label="Bekijk foto groot">
+            <img class="gn-pagina__beeld" src="{{ foto.path | relative_url }}" alt="{{ bijschrift | default: page.afbeelding_alt | default: page.title | escape }}">
+            <span class="gn-foto__zoom" aria-hidden="true">Vergroot</span>
+          </a>
+          {%- if page.voorbeeldfotos %}<span class="gn-foto__label">Voorbeeldfoto</span>{% endif %}
+          {%- if bijschrift %}<figcaption class="gn-foto__bijschrift">{{ bijschrift }}</figcaption>{% endif %}
         </figure>
       </div>
       {%- endif %}
@@ -46,9 +55,14 @@
         {%- if fotos.size > 1 %}
         <div class="gn-galerij">
           {%- for foto in fotos offset: 1 %}
+          {%- assign bijschrift = page.bijschriften[foto.name] -%}
           <figure class="gn-foto">
-            <img src="{{ foto.path | relative_url }}" alt="{{ page.title }} — foto {{ forloop.index | plus: 1 }}" loading="lazy">
-            {%- if page.voorbeeldfotos %}<figcaption class="gn-foto__label">Voorbeeldfoto</figcaption>{% endif %}
+            <a class="gn-foto__link" href="{{ foto.path | relative_url }}" data-lightbox="project" data-caption="{{ bijschrift | escape }}" aria-label="Bekijk foto {{ forloop.index | plus: 1 }} groot">
+              <img src="{{ foto.path | relative_url }}" alt="{{ bijschrift | default: page.title | escape }} (foto {{ forloop.index | plus: 1 }})" loading="lazy">
+              <span class="gn-foto__zoom" aria-hidden="true">Vergroot</span>
+            </a>
+            {%- if page.voorbeeldfotos %}<span class="gn-foto__label">Voorbeeldfoto</span>{% endif %}
+            {%- if bijschrift %}<figcaption class="gn-foto__bijschrift">{{ bijschrift }}</figcaption>{% endif %}
           </figure>
           {%- endfor %}
         </div>
@@ -60,6 +74,7 @@
 
       {%- include kennismaken.html -%}
     </main>
+    {%- if fotos.size > 0 %}{% include lightbox.html %}{% endif %}
     {%- include footer.html -%}
   </body>
 </html>
