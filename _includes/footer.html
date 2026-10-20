@@ -1,13 +1,19 @@
-{%- comment -%} Contactgegevens komen uit _config.yml (email, regio). {%- endcomment -%}
+{%- comment -%} Contactgegevens komen uit _config.yml (email, telefoon, instagram, regio, voorwaarden). {%- endcomment -%}
 <footer class="site-footer gn-footer">
   <div class="wrapper gn-footer__grid">
     <div>
       <p class="gn-footer__naam">{{ site.title | escape }}</p>
       <p>{{ site.description | escape }}</p>
+      <p class="gn-footer__slogan">Samen kom je tot bloei</p>
     </div>
     <div>
       <p class="gn-footer__kop">Contact</p>
-      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a>{% if site.regio %}<br>{{ site.regio }}{% endif %}</p>
+      <p>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
+        {%- if site.telefoon %}<a href="tel:{{ site.telefoon | remove: ' ' }}">{{ site.telefoon }}</a><br>{% endif %}
+        {%- if site.instagram %}<a href="{{ site.instagram }}">Instagram</a><br>{% endif %}
+        {%- if site.regio %}{{ site.regio }}{% endif %}
+      </p>
     </div>
     <div>
       <p class="gn-footer__kop">Pagina's</p>
@@ -16,8 +22,12 @@
           {%- assign p = site.pages | where: "path", path | first -%}
           {%- if p.title %}<li><a href="{{ p.url | relative_url }}">{{ p.title | escape }}</a></li>{% endif -%}
         {%- endfor -%}
+        <li><a href="{{ '/ecohoeve/' | relative_url }}">Ecohoeve</a></li>
       </ul>
     </div>
   </div>
-  <div class="wrapper gn-footer__onder">© {{ site.time | date: '%Y' }} {{ site.title | escape }}</div>
+  <div class="wrapper gn-footer__onder">
+    © {{ site.time | date: '%Y' }} {{ site.title | escape }}
+    {%- if site.voorwaarden %} · <a href="{{ site.voorwaarden | relative_url }}">Algemene voorwaarden</a>{% endif %}
+  </div>
 </footer>
