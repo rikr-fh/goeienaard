@@ -6,8 +6,10 @@ plaats: Wintelre
 type: Ontwerp en advies bij aanleg
 jaar: "[jaar]"
 samenvatting: Een avontuurlijke, landelijke voortuin voor een gezin in Wintelre. We maakten het ontwerp en gaven advies bij de aanleg.
-# Zet hier een eigen foto neer, bv. /assets/img/voortuin-wintelre.jpg
-afbeelding:
+# Foto's: zet ze in assets/img/projecten/voortuin-wintelre/  (01.jpg is de grote foto)
+fotomap: voortuin-wintelre
+# Dit zijn tijdelijke voorbeeldfoto's. Haal de regel hieronder weg zodra je eigen foto's erin staan.
+voorbeeldfotos: true
 afbeelding_alt: De voortuin in Wintelre
 ---
 

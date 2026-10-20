@@ -5,8 +5,10 @@ plaats: "[plaats]"
 type: Tuinontwerp en beplantingsplan
 jaar: "[jaar]"
 samenvatting: Een kleine tuin die groter voelt, met grassen, een zitplek in de ochtendzon en ruimte voor vlinders.
-# Zet hier een eigen foto neer, bv. /assets/img/project-stadstuin.jpg
-afbeelding:
+# Foto's: zet ze in assets/img/projecten/stadstuin/  (01.jpg is de grote foto)
+fotomap: stadstuin
+# Dit zijn tijdelijke voorbeeldfoto's. Haal de regel hieronder weg zodra je eigen foto's erin staan.
+voorbeeldfotos: true
 afbeelding_alt: Natuurlijke stadstuin met grassen en vaste planten
 ---
 
