@@ -10,7 +10,7 @@ hero_image: /assets/img/hero-tuin.jpg
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="/posts/{{ post.url }}">{{ post.title }}</a>
     </li>
   {% endfor %}
 </ul>
