@@ -63,30 +63,36 @@
       </section>
       {%- endif %}
 
-      {%- if site.posts.size > 0 %}
-      <section class="gn-sectie gn-sectie--zacht">
-        <div class="wrapper">
-          <p class="gn-label">Projecten</p>
-          <h2 class="gn-sectie__titel">{{ page.projecten_titel | default: "Tuinen van Studio Goeienaard" }}</h2>
-          {% include projecten-grid.html max=3 %}
-          <p class="gn-meer"><a href="{{ '/projecten/' | relative_url }}">Alle projecten →</a></p>
-        </div>
-      </section>
-      {%- endif %}
-
       {%- if page.aanbevelingen %}
-      <section class="gn-sectie gn-aanbevelingen">
+      <section class="gn-sectie gn-sectie--zacht gn-aanbevelingen">
         <div class="wrapper">
           <p class="gn-label">{{ page.aanbevelingen_label | default: "Aanbevelingen" }}</p>
           <h2 class="gn-sectie__titel">{{ page.aanbevelingen_titel | default: "Wat anderen zeggen" }}</h2>
           <div class="gn-quotes">
             {%- for a in page.aanbevelingen %}
+            {%- assign proj = nil -%}{%- if a.project -%}{%- assign proj = site.posts | where: "url", a.project | first -%}{%- endif -%}
             <figure class="gn-quote">
               <blockquote>{{ a.tekst }}</blockquote>
-              <figcaption>{{ a.naam }}{% if a.project %} · {{ a.project }}{% endif %}</figcaption>
+              <figcaption>
+                {%- if proj %}
+                {%- assign q_img = nil -%}{%- assign _map = proj.fotomap | default: proj.slug -%}{%- assign _pad = '/assets/img/projecten/' | append: _map | append: '/' -%}{%- assign _fotos = site.static_files | where_exp: 'f', 'f.path contains _pad' | sort: 'path' -%}{%- if _fotos.size > 0 -%}{%- assign q_img = _fotos[0].path | relative_url -%}{%- endif -%}
+                <a class="gn-quote__project" href="{{ proj.url | relative_url }}">
+                  {%- if q_img %}<span class="gn-quote__foto" style="background-image: url('{{ q_img }}')" aria-hidden="true"></span>{% endif %}
+                  <span class="gn-quote__wie">
+                    <span class="gn-quote__naam">{{ a.naam }}</span>
+                    <span class="gn-quote__link">{{ proj.title }}{% if proj.plaats %}, <span class="gn-quote__plaats">{{ proj.plaats | replace: '-', '‑' }}</span>{% endif %} →</span>
+                  </span>
+                </a>
+                {%- else %}
+                <span class="gn-quote__naam">{{ a.naam }}</span>
+                {%- endif %}
+              </figcaption>
             </figure>
             {%- endfor %}
           </div>
+          {%- if site.posts.size > 0 %}
+          <p class="gn-meer"><a href="{{ '/projecten/' | relative_url }}">Bekijk alle projecten →</a></p>
+          {%- endif %}
         </div>
       </section>
       {%- endif %}
