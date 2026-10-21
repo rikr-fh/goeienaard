@@ -2,8 +2,9 @@
 title: Eetbare tuin
 date: 2024-10-01
 permalink: /projecten/eetbare-tuin/
-type: Ontwerp landelijke tuin
-samenvatting: Een prachtige landelijke tuin, volledig ingericht met eetbare gewassen. Genoeg voedsel voor een heel gezin.
+plaats: Waterrijk gebied
+type: Conceptontwerp landelijke tuin
+samenvatting: Een concept voor een landelijke tuin in een waterrijk gebied, volledig ingericht met eetbare gewassen. Genoeg voedsel voor een heel gezin.
 # Foto's: assets/img/projecten/eetbare-tuin/  (01.jpg is de grote foto)
 fotomap: eetbare-tuin
 afbeelding_alt: Het definitieve ontwerp
@@ -20,7 +21,7 @@ bijschriften:
 
 ## Water en genieten
 
-- Een poel om regenwater op te vangen en vast te houden.
+- Een poel om regenwater op te vangen en vast te houden, passend bij het waterrijke landschap.
 - Horeca in de kas en een terras in de boomgaard.
 - Vanaf de terrassen bij de boerderij kijk je uit op een prachtige siertuin in cottagestijl.
 

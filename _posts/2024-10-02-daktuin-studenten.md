@@ -2,8 +2,9 @@
 title: Daktuin voor studenten
 date: 2024-10-02
 permalink: /projecten/daktuin-studenten/
-type: Ontwerp daktuin
-samenvatting: Een student in contact met de natuur is een blije student. Een daktuin met plekken om te studeren, te sporten en elkaar te ontmoeten.
+plaats: Utrecht
+type: Conceptontwerp daktuin
+samenvatting: Een student in contact met de natuur is een blije student. Een concept voor een daktuin in Utrecht met plekken om te studeren, te sporten en elkaar te ontmoeten.
 # Foto's: assets/img/projecten/daktuin-studenten/  (01.jpg is de grote foto)
 fotomap: daktuin-studenten
 afbeelding_alt: Ontwerp van de daktuin
