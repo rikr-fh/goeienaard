@@ -7,6 +7,52 @@ intro: Wil je wat anders met je tuin, maar weet je niet waar je moet beginnen? O
 afbeelding: /assets/img/werkwijze.jpg
 afbeelding_alt: Een weelderige natuurlijke tuin met een oude boom en bloeiende borders
 afbeelding_staand: true
+
+# Diensten (als tabbladen op de pagina). Pas teksten en prijzen hier aan.
+diensten:
+  - titel: Compleet tuinontwerp
+    prijs: Vanaf € 500
+    tekst: Voor een groen en bloeiend paradijs rond je huis. Je doorloopt alle vijf de stappen hierboven.
+    punten:
+      - Handgetekende definitieve ontwerpen en sfeerbeelden op A3
+      - Een uitgebreid beplantingsplan met bestellijst, met de belangrijkste planten in beeld
+      - Een ontwerp voor materialen en verlichting
+      - Een digitale gids voor ecologische aanleg en onderhoud
+    tarieven:
+      - naam: Postzegeltje
+        uitleg: tot 100 m²
+        prijs: € 500 tot € 1.000
+      - naam: Doorsnee tuin
+        uitleg: 100 tot 250 m²
+        prijs: € 1.000 tot € 1.500
+      - naam: Zeeën van ruimte
+        uitleg: vanaf 250 m²
+        prijs: In overleg
+  - titel: Mini-tuinmetamorfose
+    prijs: € 300
+    tekst: Hoeft niet de hele tuin op de schop, maar wil je wel een deel vergroenen? Wat tegels eruit en planten erin, of de ruimte slimmer gebruiken? In één middag bespreken we je wensen.
+    punten:
+      - Een handgetekend schetsontwerp met een plan voor vergroening
+      - Een compact beplantingsplan met bestellijst, met de belangrijkste planten in beeld
+      - Een minigids voor ecologisch tuinieren
+  - titel: Beplantingsadvies
+    prijs: In overleg
+    tekst: Is de basis van je tuin al goed, en zoek je alleen advies over de beplanting? Ik denk graag met je mee.
+    punten:
+      - Een beplantingsplan voor jouw tuin
+      - Als je wilt, levering van biologische planten
+
+# Veelgestelde vragen (uitklapbaar). Links schrijf je als [tekst](/pagina/).
+faq:
+  - vraag: Moet ik de tuin daarna zelf aanleggen?
+    antwoord: >-
+      Dat mag, maar het hoeft niet. Met de gids kun je zelf aan de slag. Je kunt ook een hovenier inschakelen; ik breng je graag in contact met een ecologisch hovenier.
+  - vraag: Hoeveel onderhoud vraagt een ecologische tuin?
+    antwoord: >-
+      Minder dan je denkt, als je oude gewoontes durft los te laten. De eerste een tot twee jaar vraagt de tuin wat meer aandacht, tot de borders zijn dichtgegroeid. Daarna is het vooral genieten. Op de pagina [Ecologische tuin](/ecologische-tuin/) lees je hoe je een luie en gelukkige tuinier wordt.
+  - vraag: Is mijn tuin niet te klein?
+    antwoord: >-
+      Zeker niet. Elke tegel die eruit gaat en elke plant die erin komt, telt. Voor kleine tuinen of een deel van de tuin is er de mini-tuinmetamorfose.
 ---
 
 ## 1. Ontmoeting
@@ -40,52 +86,12 @@ Na een paar maanden kom ik graag langs om samen terug te kijken. Hoe heb je de s
 
 Dan kan het grote genieten beginnen. Een tuin is nooit in één keer af. Het duurt een tot twee jaar voordat de borders goed zijn dichtgegroeid, en daarna blijft de tuin in beweging. Kijk, bewonder en leer van je tuin.
 
-## Diensten
+## Diensten en tarieven
 
-### Compleet tuinontwerp
+Na onze kennismaking ontvang je een offerte op maat. De prijs hangt af van de grootte van de tuin, hoe complex het ontwerp is en bijkomende kosten zoals reistijd. Alle prijzen zijn inclusief btw.
 
-Voor een groen en bloeiend paradijs rond je huis. Je doorloopt alle vijf de stappen hierboven en ontvangt:
-
-- handgetekende definitieve ontwerpen en sfeerbeelden op A3;
-- een uitgebreid beplantingsplan met bestellijst, met de belangrijkste planten in beeld;
-- een ontwerp voor materialen en verlichting;
-- een digitale gids voor ecologische aanleg en onderhoud.
-
-### Mini-tuinmetamorfose
-
-Hoeft niet de hele tuin op de schop, maar wil je wel een deel vergroenen? Wat tegels eruit en planten erin, maar welke dan? Of de ruimte slimmer gebruiken? In één middag bespreken we je wensen. Daarna ontvang je:
-
-- een handgetekend schetsontwerp met een plan voor vergroening;
-- een compact beplantingsplan met bestellijst, met de belangrijkste planten in beeld;
-- een minigids voor ecologisch tuinieren.
-
-### Beplantingsadvies
-
-Is de basis van je tuin al goed, en zoek je alleen advies over de beplanting? Ik denk graag met je mee. Je krijgt een beplantingsplan, en als je wilt zorg ik voor de levering van biologische planten.
-
-## Tarieven
-
-Na onze ontmoeting ontvang je een offerte op maat. De prijs hangt af van de grootte van de tuin, hoe complex het ontwerp is en bijkomende kosten zoals reistijd. Om je vooraf een idee te geven:
-
-- **Postzegeltje** (tot 100 m²): € 500 tot € 1.000
-- **Doorsnee tuin** (100 tot 250 m²): € 1.000 tot € 1.500
-- **Zeeën van ruimte** (vanaf 250 m²): in overleg
-- **Mini-tuinmetamorfose:** € 300
-- **Beplantingsplan en levering van planten:** in overleg
-{: .gn-stapfeiten}
-
-Alle prijzen zijn inclusief btw.
+{% include diensten-tabs.html %}
 
 ## Veelgestelde vragen
 
-### Moet ik de tuin daarna zelf aanleggen?
-
-Dat mag, maar het hoeft niet. Met de gids kun je zelf aan de slag. Je kunt ook een hovenier inschakelen; ik breng je graag in contact met een ecologisch hovenier.
-
-### Hoeveel onderhoud vraagt een ecologische tuin?
-
-Minder dan je denkt, als je oude gewoontes durft los te laten. De eerste een tot twee jaar vraagt de tuin wat meer aandacht, tot de borders zijn dichtgegroeid. Daarna is het vooral genieten. Op de pagina [Ecologische tuin]({{ '/ecologische-tuin/' | relative_url }}) lees je hoe je een luie en gelukkige tuinier wordt.
-
-### Is mijn tuin niet te klein?
-
-Zeker niet. Elke tegel die eruit gaat en elke plant die erin komt, telt. Voor kleine tuinen of een deel van de tuin is er de mini-tuinmetamorfose.
+{% include faq.html %}
