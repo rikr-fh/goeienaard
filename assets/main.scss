@@ -453,3 +453,32 @@ html.gn-lb-open { overflow: hidden; }
 .gn-kennismaking__stappen li { margin-bottom: .5rem; }
 .gn-kennismaking .gn-acties { margin-top: 0; }
 @media (max-width: 600px) { .gn-kennismaking { padding: 1.4rem 1.25rem; } }
+
+/* Kennismakingsformulier (Formspree) */
+.gn-form { display: grid; gap: 1rem; margin: 0 0 1rem; }
+.gn-form__rij { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.gn-form__veld { display: grid; gap: .35rem; font-size: .95rem; }
+.gn-form__veld > span { font-weight: 600; color: var(--groen); }
+.gn-form__veld em { font-weight: 400; font-style: normal; opacity: .7; }
+.gn-form input[type=text], .gn-form input[type=email], .gn-form input[type=tel], .gn-form textarea {
+  width: 100%; box-sizing: border-box; font: inherit; color: inherit; background: var(--zand);
+  border: 1px solid rgba(63, 90, 58, .25); border-radius: 10px; padding: .7rem .85rem; transition: border-color .15s, box-shadow .15s; }
+.gn-form textarea { resize: vertical; min-height: 7rem; }
+.gn-form input:focus, .gn-form textarea:focus { outline: none; border-color: var(--groen); box-shadow: 0 0 0 3px rgba(63, 90, 58, .18); background: #fff; }
+.gn-form ::placeholder { color: #2B2B26; opacity: .45; }
+.gn-form__keuze { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+.gn-form__keuze legend { font-weight: 600; color: var(--groen); font-size: .95rem; margin-bottom: .4rem; padding: 0; }
+.gn-form__keuze label { display: inline-flex; align-items: center; gap: .45rem; cursor: pointer; }
+.gn-form__keuze input { accent-color: var(--groen); width: 1.1rem; height: 1.1rem; }
+.gn-form__verstuur { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: .25rem; }
+.gn-form__verstuur .gn-knop { border: 0; cursor: pointer; font: inherit; }
+.gn-form__verstuur .gn-knop[disabled] { opacity: .6; cursor: progress; }
+.gn-form__klein { font-size: .85rem; opacity: .75; margin: 0; flex: 1 1 16rem; }
+.gn-form__status { margin: 0; color: var(--klei); font-weight: 500; }
+.gn-form__status:empty { display: none; }
+.gn-form__val { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.gn-form__alt { font-size: .92rem; opacity: .85; margin: 1rem 0 0; }
+.gn-form__bedankt { padding: .5rem 0; outline: none; }
+.gn-form__bedankt h3 { margin: .25rem 0 .5rem; color: var(--groen); }
+@media (max-width: 600px) { .gn-form__rij { grid-template-columns: 1fr; } }
+.gn-kennismaking__stappen { padding-left: 1.25rem; margin-left: 0; }
