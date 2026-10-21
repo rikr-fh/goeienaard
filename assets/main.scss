@@ -423,3 +423,24 @@ html.gn-lb-open { overflow: hidden; }
   .gn-tekst h2 { clear: both; }
 }
 @media (min-width: 1100px) { .gn-schets--rechts { margin-right: -14rem; } }
+
+/* ───────────── Brede pagina's: tekst en schetsen naast elkaar ───────────── */
+.gn-schets--rechts, .gn-schets--links { float: none !important; width: auto !important; margin: 2rem 0 !important; }
+.gn-tekst h2 { clear: none; }
+.gn-tekst--breed { max-width: none; }
+.gn-tekst--breed > p, .gn-tekst--breed > ul, .gn-tekst--breed > ol, .gn-tekst--breed > h2, .gn-tekst--breed > h3 { max-width: 42rem; }
+.gn-duo { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 4rem; align-items: center; margin: 0 0 4rem; }
+.gn-duo--omgekeerd > :first-child { order: 2; }
+.gn-duo h2 { margin-top: 0 !important; }
+.gn-duo .gn-schets { margin: 0 !important; }
+.gn-duo .gn-schets img { box-shadow: 0 20px 40px -30px rgba(46,67,41,.4); }
+.gn-pijlers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 2rem 0 3rem; }
+.gn-pijler { background: #fff; border-radius: 18px; padding: 1.5rem 1.6rem; }
+.gn-pijler h3 { margin-top: 0 !important; font-size: 1.2rem; }
+.gn-pijler p { margin: 0; font-size: .98rem; }
+.gn-schets--breed { margin: 1rem 0 4rem !important; }
+@media (max-width: 800px) {
+  .gn-duo { grid-template-columns: 1fr; gap: 1.75rem; margin-bottom: 3rem; }
+  .gn-duo--omgekeerd > :first-child { order: 0; }
+  .gn-pijlers { grid-template-columns: 1fr; }
+}
