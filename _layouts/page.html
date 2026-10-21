@@ -4,26 +4,34 @@
   <body>
     {%- include header.html -%}
     {%- comment -%}
-      Layout voor gewone pagina's (Over ons, Werkwijze, Contact, ...).
+      Layout voor gewone pagina's (Over, Werkwijze, Contact, ...).
       Bovenin een pagina kun je zetten:
         label:       klein woord boven de titel
         kop:         de grote titel (anders wordt 'title' gebruikt)
         intro:       inleidende zin onder de titel
         afbeelding:  /assets/img/bestand.jpg  (of een volledige https://-link naar een foto)
         afbeelding_alt: korte beschrijving van de foto
+        afbeelding_staand: true   (staande foto: komt naast de titel in plaats van eronder)
+        planten:     lijst met plantfoto's (zie ecologische-tuin.md voor een voorbeeld)
         kennismaken: false   (verbergt het blok onderaan)
     {%- endcomment -%}
+    {%- assign beeld = nil -%}{%- if page.afbeelding contains '://' -%}{%- assign beeld = page.afbeelding -%}{%- elsif page.afbeelding -%}{%- assign _f = site.static_files | where: "path", page.afbeelding | first -%}{%- if _f -%}{%- assign beeld = page.afbeelding | relative_url -%}{%- endif -%}{%- endif -%}
+    {%- assign staand = false -%}{%- if beeld and page.afbeelding_staand -%}{%- assign staand = true -%}{%- endif -%}
     <main class="gn-pagina" aria-label="Inhoud">
-      <header class="gn-pagina__kop">
+      <header class="gn-pagina__kop{% if staand %} gn-pagina__kop--staand{% endif %}">
         <div class="wrapper">
-          {%- if page.label %}<p class="gn-label">{{ page.label }}</p>{% endif %}
-          <h1>{{ page.kop | default: page.title | escape }}</h1>
-          {%- if page.intro %}<p class="gn-pagina__intro">{{ page.intro }}</p>{% endif %}
+          <div class="gn-pagina__koptekst">
+            {%- if page.label %}<p class="gn-label">{{ page.label }}</p>{% endif %}
+            <h1>{{ page.kop | default: page.title | escape }}</h1>
+            {%- if page.intro %}<p class="gn-pagina__intro">{{ page.intro }}</p>{% endif %}
+          </div>
+          {%- if staand %}
+          <img class="gn-pagina__staand" src="{{ beeld }}" alt="{{ page.afbeelding_alt }}">
+          {%- endif %}
         </div>
       </header>
 
-      {%- assign beeld = nil -%}{%- if page.afbeelding contains '://' -%}{%- assign beeld = page.afbeelding -%}{%- elsif page.afbeelding -%}{%- assign _f = site.static_files | where: "path", page.afbeelding | first -%}{%- if _f -%}{%- assign beeld = page.afbeelding | relative_url -%}{%- endif -%}{%- endif -%}
-      {%- if beeld %}
+      {%- if beeld and staand == false %}
       <div class="wrapper"><img class="gn-pagina__beeld" src="{{ beeld }}" alt="{{ page.afbeelding_alt }}"></div>
       {%- endif %}
 
@@ -31,12 +39,36 @@
         <div class="gn-tekst">
           {{ content }}
         </div>
+
+        {%- if page.planten %}
+        <section class="gn-planten" aria-labelledby="planten-titel">
+          <h2 id="planten-titel">{{ page.planten_titel | default: "Planten die ik graag gebruik" }}</h2>
+          {%- if page.planten_intro %}<p class="gn-planten__intro">{{ page.planten_intro }}</p>{% endif %}
+          <div class="gn-planten__raster">
+            {%- for plant in page.planten %}
+            {%- assign _f = site.static_files | where: "path", plant.foto | first -%}
+            {%- if _f %}
+            <figure class="gn-plant">
+              <a class="gn-foto__link" href="{{ plant.foto | relative_url }}" data-lightbox="planten" data-caption="{{ plant.naam }}{% if plant.tekst %} — {{ plant.tekst }}{% endif %}" aria-label="Bekijk {{ plant.naam }} groot">
+                <img src="{{ plant.foto | relative_url }}" alt="{{ plant.naam }}" loading="lazy">
+              </a>
+              <figcaption>
+                <strong>{{ plant.naam }}</strong>
+                {%- if plant.tekst %}<span>{{ plant.tekst }}</span>{% endif %}
+              </figcaption>
+            </figure>
+            {%- endif %}
+            {%- endfor %}
+          </div>
+        </section>
+        {%- endif %}
       </div>
 
       {%- unless page.kennismaken == false %}
         {%- include kennismaken.html -%}
       {%- endunless %}
     </main>
+    {%- if page.planten %}{% include lightbox.html %}{% endif %}
     {%- include footer.html -%}
   </body>
 </html>
