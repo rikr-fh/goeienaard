@@ -14,6 +14,7 @@
         afbeelding_staand: true   (staande foto: komt naast de titel in plaats van eronder)
         planten:     lijst met plantfoto's (zie ecologische-tuin.md voor een voorbeeld)
         kennismaken: false   (verbergt het blok onderaan)
+        breed: true          (bredere opmaak, voor tekst en afbeeldingen naast elkaar)
     {%- endcomment -%}
     {%- assign beeld = nil -%}{%- if page.afbeelding contains '://' -%}{%- assign beeld = page.afbeelding -%}{%- elsif page.afbeelding -%}{%- assign _f = site.static_files | where: "path", page.afbeelding | first -%}{%- if _f -%}{%- assign beeld = page.afbeelding | relative_url -%}{%- endif -%}{%- endif -%}
     {%- assign staand = false -%}{%- if beeld and page.afbeelding_staand -%}{%- assign staand = true -%}{%- endif -%}
@@ -36,7 +37,7 @@
       {%- endif %}
 
       <div class="wrapper">
-        <div class="gn-tekst">
+        <div class="gn-tekst{% if page.breed %} gn-tekst--breed{% endif %}">
           {{ content }}
         </div>
 
