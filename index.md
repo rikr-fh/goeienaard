@@ -43,19 +43,19 @@ diensten:
     tekst: Is de basis van je tuin al goed? Dan maak ik een beplantingsplan en kan ik biologische planten voor je laten leveren.
     prijs: In overleg
 
-projecten_titel: Tuinen van Studio Goeienaard
-# De projecten op de homepage komen automatisch uit de map _posts (de 3 nieuwste).
-
-aanbevelingen_label: Aanbevelingen
+# Aanbevelingen, gekoppeld aan een project (project: de link naar de projectpagina, mag ook weg)
+aanbevelingen_label: Projecten en ervaringen
 aanbevelingen_titel: Wat opdrachtgevers zeggen
 aanbevelingen:
   - naam: Familie van Erve
+    project: /projecten/blote-voetentuin/
     tekst: >-
       Beau's tuinontwerp past goed bij onze woonwensen, met aandacht voor de natuur en een fijne plek voor onze kinderen. Op blote voeten de natuur zien groeien en bloeien in elk seizoen.
   - naam: Mirella
     tekst: >-
       Wat ik zo bijzonder vind in het contact met Beau is haar betrokkenheid bij mijn perspectief. Doordat zij doorvraagt, positief bevestigt en oordeelloos luistert, voel ik me door haar begrepen. Beau leert jou kennen, zodat ze de tuin kan scheppen die je ziel wenst.
   - naam: Lieke, Arjen & Saar
+    project: /projecten/gilze-natuurspeeltuin/
     tekst: >-
       Wij zijn heel blij met het ontwerp voor onze tuin. Beau heeft goed naar onze wensen en die van onze dochter geluisterd. Met haar eigen creatieve invulling heeft ze een groene, praktische, unieke tuin ontworpen die bij ons en ons huis past.
 
