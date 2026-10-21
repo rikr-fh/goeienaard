@@ -8,12 +8,7 @@ jaar: "[jaar]"
 samenvatting: Een avontuurlijke, landelijke voortuin voor een gezin in Wintelre. Ik maakte het ontwerp en gaf advies bij de aanleg.
 # Foto's: zet ze in assets/img/projecten/voortuin-wintelre/  (01.jpg is de grote foto)
 fotomap: voortuin-wintelre
-# Dit zijn tijdelijke voorbeeldfoto's. Haal de regel hieronder weg zodra je eigen foto's erin staan.
-voorbeeldfotos: true
 afbeelding_alt: De voortuin in Wintelre
-# Optioneel: een bijschrift per foto (verschijnt onder de foto en in de vergroting)
-bijschriften:
-  "02.jpg": "Voorbeeld van een bijschrift: hier vertel je kort wat je op de foto ziet."
 ---
 
 ## De vraag
