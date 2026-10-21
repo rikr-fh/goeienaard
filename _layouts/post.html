@@ -67,9 +67,28 @@
           {%- endfor %}
         </div>
         {%- endif %}
-        <div class="gn-tekst gn-tekst--slot">
-          <p class="gn-terug"><a href="{{ '/projecten/' | relative_url }}">← Alle projecten</a></p>
-        </div>
+        {%- comment -%} Vorig / volgend project, in dezelfde volgorde als op de projectenpagina {%- endcomment -%}
+        <nav class="gn-projectnav" aria-label="Meer projecten">
+          {%- assign buren = "" | split: "" -%}
+          {%- if page.next %}{% assign buren = buren | push: page.next %}{% else %}{% assign buren = buren | push: nil %}{% endif -%}
+          {%- if page.previous %}{% assign buren = buren | push: page.previous %}{% else %}{% assign buren = buren | push: nil %}{% endif -%}
+          {%- for p in buren %}
+          {%- if p %}
+          {%- assign _m = p.fotomap | default: p.slug -%}{%- assign _pd = '/assets/img/projecten/' | append: _m | append: '/' -%}{%- assign _fs = site.static_files | where_exp: 'f', 'f.path contains _pd' | sort: 'path' -%}
+          <a class="gn-projectnav__item{% if forloop.first %} gn-projectnav__item--vorige{% else %} gn-projectnav__item--volgende{% endif %}" href="{{ p.url | relative_url }}" rel="{% if forloop.first %}prev{% else %}next{% endif %}">
+            <span class="gn-projectnav__beeld"{% if _fs.size > 0 %} style="background-image: url('{{ _fs[0].path | relative_url }}')"{% endif %}></span>
+            <span class="gn-projectnav__tekst">
+              <span class="gn-projectnav__richting">{% if forloop.first %}← Vorig project{% else %}Volgend project →{% endif %}</span>
+              <span class="gn-projectnav__titel">{{ p.title }}</span>
+              {%- if p.plaats %}<span class="gn-projectnav__plaats">{{ p.plaats }}</span>{% endif %}
+            </span>
+          </a>
+          {%- else %}
+          <span class="gn-projectnav__leeg" aria-hidden="true"></span>
+          {%- endif %}
+          {%- endfor %}
+        </nav>
+        <p class="gn-projectnav__alle"><a href="{{ '/projecten/' | relative_url }}">Alle projecten bekijken</a></p>
       </div>
 
       {%- include kennismaken.html -%}
