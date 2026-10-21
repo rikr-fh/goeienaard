@@ -379,3 +379,27 @@ html.gn-lb-open { overflow: hidden; }
 .gn-plant figcaption strong { display: block; font-family: Fraunces, serif; font-weight: 400; font-size: 1.15rem; color: var(--groen); }
 .gn-plant figcaption span { color: #5A5A50; }
 @media (max-width: 760px) { .gn-planten__raster { grid-template-columns: repeat(2, 1fr); } }
+
+/* ───────────── Vorig / volgend project ───────────── */
+.gn-projectnav { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 3rem 0 .5rem; padding-top: 2rem; border-top: 1px solid var(--lijn); }
+.gn-projectnav__item {
+  display: flex; align-items: center; gap: 1rem; padding: .75rem; border-radius: 16px;
+  background: #fff; color: inherit !important; text-decoration: none !important;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.gn-projectnav__item:hover { transform: translateY(-2px); box-shadow: 0 12px 26px -18px rgba(46,67,41,.45); }
+.gn-projectnav__item:focus-visible { outline: 3px solid var(--klei); outline-offset: 3px; }
+.gn-projectnav__item--volgende { flex-direction: row-reverse; text-align: right; }
+.gn-projectnav__beeld { flex: 0 0 88px; height: 88px; border-radius: 12px; background: linear-gradient(150deg, #A9BC97, #5F7F55) center / cover; }
+.gn-projectnav__tekst { display: flex; flex-direction: column; gap: .15rem; min-width: 0; }
+.gn-projectnav__richting { font-size: .75rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--klei); }
+.gn-projectnav__titel { font-family: Fraunces, serif; font-size: 1.2rem; color: var(--groen); line-height: 1.25; }
+.gn-projectnav__plaats { font-size: .85rem; color: #5A5A50; }
+.gn-projectnav__alle { text-align: center; margin: 1.25rem 0 3rem; font-weight: 500; }
+.gn-projectnav__alle a { text-decoration: none; }
+.gn-projectnav__alle a:hover { text-decoration: underline; }
+@media (max-width: 600px) {
+  .gn-projectnav { grid-template-columns: 1fr; }
+  .gn-projectnav__leeg { display: none; }
+  .gn-projectnav__beeld { flex-basis: 64px; height: 64px; }
+}
