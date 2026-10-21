@@ -10,7 +10,7 @@ telefoon: 06 34 34 49 36
 instagram: https://www.instagram.com/studiogoeienaard/
 regio: Tilburg en Midden-Brabant
 # Zet hier de link naar de algemene voorwaarden zodra die online staan, bv. /assets/algemene-voorwaarden.pdf
-# voorwaarden: /assets/algemene-voorwaarden.pdf
+voorwaarden: /algemene-voorwaarden/
 
 baseurl: "/skills-github-pages"
 permalink: /projecten/:title/
