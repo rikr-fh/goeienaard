@@ -74,6 +74,23 @@
       </section>
       {%- endif %}
 
+      {%- if page.aanbevelingen %}
+      <section class="gn-sectie gn-aanbevelingen">
+        <div class="wrapper">
+          <p class="gn-label">{{ page.aanbevelingen_label | default: "Aanbevelingen" }}</p>
+          <h2 class="gn-sectie__titel">{{ page.aanbevelingen_titel | default: "Wat anderen zeggen" }}</h2>
+          <div class="gn-quotes">
+            {%- for a in page.aanbevelingen %}
+            <figure class="gn-quote">
+              <blockquote>{{ a.tekst }}</blockquote>
+              <figcaption>{{ a.naam }}{% if a.project %} · {{ a.project }}{% endif %}</figcaption>
+            </figure>
+            {%- endfor %}
+          </div>
+        </div>
+      </section>
+      {%- endif %}
+
       {%- if page.stappen %}
       <section class="gn-sectie">
         <div class="wrapper">
