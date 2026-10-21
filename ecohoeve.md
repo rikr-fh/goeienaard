@@ -67,7 +67,8 @@ Iedereen is welkom op Goeienaard. De buurt kan meegenieten van de natuur, even t
 </div>
 </div>
 
-{% include schets.html src="/assets/img/ecohoeve/impressie.jpg" alt="Impressie van het perceel met woning, voedselbos en poelen" bijschrift="Impressie: de tweegezinswoning met privétuin, het voedselbos, een schuur, de publieke toegangspoort en een bijgebouw" kant="breed" %}
+<div class="gn-duo gn-duo--boven" markdown="1">
+<div markdown="1">
 
 ## Wat we zoeken
 
@@ -78,6 +79,10 @@ Iedereen is welkom op Goeienaard. De buurt kan meegenieten van de natuur, even t
 - **Op termijn**: een klein bijgebouw als werkplek en voor workshops, en een mantelzorgwoning voor later.
 
 Een concrete locatie is er nog niet. We zoeken een rustige plek buiten de stad, makkelijk bereikbaar met de fiets. Het liefst in de stadsregionale parken rond Tilburg, zoals Moerenburg, Koningshoeven, Landschapspark Pauwels of Stadsbos013, waar we kunnen helpen een gebied te ontwikkelen.
+
+</div>
+{% include schets.html src="/assets/img/ecohoeve/impressie.jpg" alt="Impressie van het perceel met woning, voedselbos en poelen" bijschrift="Impressie: de tweegezinswoning met privétuin, het voedselbos, een schuur, de publieke toegangspoort en een bijgebouw" %}
+</div>
 
 ## Wil jij ook opbloeien?
 
