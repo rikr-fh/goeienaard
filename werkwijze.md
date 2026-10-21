@@ -11,7 +11,7 @@ afbeelding_staand: true
 
 ## 1. Ontmoeting
 
-Ik kom bij je langs om jou en je tuin beter te leren kennen. Wie ben je, en wat zoek je in een tuin? Welk gevoel moet de tuin je geven, en wat wil je er beleven? Ik vertel je ook wat een ecologische tuin is, en wat die voor jou kan betekenen.
+We maken kennis aan de telefoon, of met een kort bezoek aan je tuin als je in de buurt woont. Zo leer ik jou en je tuin beter kennen. Wie ben je, en wat zoek je in een tuin? Welk gevoel moet de tuin je geven, en wat wil je er beleven? Ik vertel je ook wat een ecologische tuin is, en wat die voor jou kan betekenen.
 
 - **Kosten:** het eerste gesprek is gratis.
 - **Daarna:** je ontvangt een offerte op maat. Pas als je die goedkeurt, gaan we aan de slag.

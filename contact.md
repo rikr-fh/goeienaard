@@ -3,13 +3,24 @@ title: Contact
 permalink: /contact/
 label: Contact
 kop: Benieuwd wat ik voor jouw tuin kan betekenen?
-intro: Of je al precies weet wat je wilt, of alleen het gevoel hebt dat het anders kan, een eerste gesprek is de beste start. Dat gesprek is gratis, en ik neem binnen een paar werkdagen contact met je op.
+intro: Of je al precies weet wat je wilt, of alleen het gevoel hebt dat het anders kan, een kennismaking is de beste start. Laagdrempelig, gratis en je zit nergens aan vast.
 kennismaken: false
 ---
 
-<div class="gn-acties gn-contact-mail">
-  <a class="gn-knop" href="mailto:{{ site.email }}?subject=Kennismaking%20Studio%20Goeienaard">Mail {{ site.email }}</a>
+<div id="kennismaking" class="gn-kennismaking" markdown="1">
+
+## Kennismaking aanvragen
+
+1. **Je stuurt me een berichtje of belt.** Een paar zinnen over je tuin is genoeg.
+2. **Ik neem binnen een paar werkdagen contact met je op.**
+3. **We maken kennis.** Aan de telefoon, of met een kort bezoek aan je tuin als je in de buurt woont. Dit eerste gesprek is gratis.
+{: .gn-kennismaking__stappen}
+
+<div class="gn-acties">
+  <a class="gn-knop" href="mailto:{{ site.email }}?subject=Kennismaking%20Studio%20Goeienaard&amp;body=Hoi%20Beau%2C%0A%0AIk%20wil%20graag%20kennismaken.%0A%0AWaar%20ligt%20mijn%20tuin%20%28plaats%29%3A%20%0AHoe%20groot%20is%20de%20tuin%20ongeveer%3A%20%0AWat%20ik%20zou%20willen%3A%20%0AWanneer%20ik%20graag%20wil%20beginnen%3A%20%0AJe%20kunt%20me%20bellen%20op%3A%20%0A%0AGroet%2C%0A">Mail {{ site.email }}</a>
   <a class="gn-knop gn-knop--licht" href="tel:{{ site.telefoon | remove: ' ' }}">Bel {{ site.telefoon }}</a>
+</div>
+
 </div>
 
 ## Wat handig is om te vertellen
@@ -22,11 +33,9 @@ Je hoeft nog niet alles te weten, maar hiermee kan ik je sneller en beter helpen
 - **Een paar foto's van je tuin zoals hij nu is:** gewoon met je telefoon.
 - **Je planning:** wanneer zou je graag willen beginnen?
 
-## Wat er daarna gebeurt
+## Na de kennismaking
 
-1. Ik lees je bericht en neem binnen een paar werkdagen contact met je op.
-2. We plannen een ontmoeting bij jou in de tuin. Dit eerste gesprek is gratis.
-3. Daarna ontvang je een offerte op maat. Je beslist in alle rust of je verder wilt.
+Klikt het, dan ontvang je een offerte op maat. Je beslist in alle rust of je verder wilt.
 
 ## Gegevens
 

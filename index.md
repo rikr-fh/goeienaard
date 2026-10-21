@@ -15,8 +15,8 @@ hero:
   tekst: Een tuin waarin de planten, de dieren en jij het goed hebben. Ik ontwerp ecologische tuinen die het hele jaar bloeien, groeien en leven, en waar jij elke dag van geniet.
   afbeelding: /assets/img/hero-tuin.jpg
   knop:
-    tekst: Plan een gratis kennismaking
-    link: /contact/
+    tekst: Vraag een gratis kennismaking aan
+    link: /contact/#kennismaking
   link:
     tekst: Bekijk mijn werk
     link: /projecten/
@@ -62,7 +62,7 @@ aanbevelingen:
 stappen_titel: Zo komen we samen tot jouw tuin
 stappen:
   - titel: Ontmoeting
-    tekst: Ik kom bij je langs en leer jou en je tuin kennen. Dit eerste gesprek is gratis.
+    tekst: We maken kennis aan de telefoon, of met een kort bezoek als je in de buurt woont. Dit eerste gesprek is gratis.
   - titel: Ontdekking
     tekst: Ik breng je wensen, de bodem, het licht en de mogelijkheden in beeld.
   - titel: Schetsontwerp
@@ -80,6 +80,6 @@ ecohoeve:
 kennismaken:
   slogan: Samen kom je tot bloei
   titel: Zullen we kennismaken?
-  tekst: Vertel me over je tuin en wat je zou willen. Het eerste gesprek is gratis en je zit nergens aan vast.
+  tekst: Vertel me over je tuin en wat je zou willen. Even bellen of een kort bezoek, het eerste gesprek is gratis en je zit nergens aan vast.
   email: studio@goeienaard.nl
 ---
