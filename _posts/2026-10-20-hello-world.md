@@ -1,4 +1,6 @@
 ---
+# Tijdelijk verborgen. Haal de regel hieronder weg om het project weer te tonen.
+published: false
 title: Avontuurlijke voortuin
 date: 2026-10-20
 permalink: /projecten/voortuin-wintelre/
