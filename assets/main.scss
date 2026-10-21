@@ -482,3 +482,4 @@ html.gn-lb-open { overflow: hidden; }
 .gn-form__bedankt h3 { margin: .25rem 0 .5rem; color: var(--groen); }
 @media (max-width: 600px) { .gn-form__rij { grid-template-columns: 1fr; } }
 .gn-kennismaking__stappen { padding-left: 1.25rem; margin-left: 0; }
+.gn-form[hidden], .gn-form__bedankt[hidden] { display: none !important; }
