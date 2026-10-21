@@ -1,0 +1,28 @@
+{%- comment -%}
+  Veelgestelde vragen als uitklapblokken; er staat er steeds één open.
+  De vragen staan bovenin de pagina onder  faq:  (met  vraag:  en  antwoord: )
+  Links in een antwoord schrijf je als [tekst](/pagina/).
+{%- endcomment -%}
+{%- assign _pre = '](' | append: site.baseurl | append: '/' -%}
+<div class="gn-faq" data-gn-faq>
+  {%- for f in page.faq %}
+  <details class="gn-faq__item" name="faq">
+    <summary class="gn-faq__vraag">{{ f.vraag }}</summary>
+    <div class="gn-faq__antwoord">{{ f.antwoord | replace: '](/', _pre | markdownify }}</div>
+  </details>
+  {%- endfor %}
+</div>
+<script>
+(function () {
+  // Eén vraag tegelijk open (ook in browsers die 'name' op details nog niet kennen)
+  document.querySelectorAll('[data-gn-faq]').forEach(function (box) {
+    var items = [].slice.call(box.querySelectorAll('details'));
+    items.forEach(function (d) {
+      d.addEventListener('toggle', function () {
+        if (!d.open) return;
+        items.forEach(function (o) { if (o !== d) o.open = false; });
+      });
+    });
+  });
+})();
+</script>
