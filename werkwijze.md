@@ -4,9 +4,9 @@ permalink: /werkwijze/
 label: Werkwijze en tarieven
 kop: Stap voor stap naar een groen paradijs
 intro: Wil je wat anders met je tuin, maar weet je niet waar je moet beginnen? Of wil je vergroenen, maar hoe pak je dat aan? Van een grote tuinverbouwing tot een kleine metamorfose, ik neem je stap voor stap mee.
-# Tijdelijke foto van Unsplash. Vervang door een eigen foto, bv. /assets/img/werkwijze.jpg
-afbeelding: https://images.unsplash.com/photo-1789119066939-e46391fb573b?w=1600&q=80&auto=format&fit=crop
-afbeelding_alt: Paarse bloemen en goudkleurige siergrassen in een border
+afbeelding: /assets/img/werkwijze.jpg
+afbeelding_alt: Een weelderige natuurlijke tuin met een oude boom en bloeiende borders
+afbeelding_staand: true
 ---
 
 ## 1. Ontmoeting

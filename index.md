@@ -13,8 +13,7 @@ hero:
   label: Ecologische tuinen · Tilburg en omgeving
   titel: Nodig de natuur uit in je tuin
   tekst: Een tuin waarin de planten, de dieren en jij het goed hebben. Ik ontwerp ecologische tuinen die het hele jaar bloeien, groeien en leven, en waar jij elke dag van geniet.
-  # Tijdelijke foto van Unsplash. Vervang door een eigen foto, bv. /assets/img/hero-tuin.jpg
-  afbeelding: https://images.unsplash.com/photo-1707844856910-7518d10d95f7?w=2000&q=80&auto=format&fit=crop
+  afbeelding: /assets/img/hero-tuin.jpg
   knop:
     tekst: Plan een gratis kennismaking
     link: /contact/

@@ -4,9 +4,26 @@ permalink: /ecologische-tuin/
 label: Ecologische tuin
 kop: Een tuin waarin jij en de natuur elkaar versterken
 intro: In een ecologische tuin worden jouw wensen verbonden met de natuur. Jij geeft de natuur meer ruimte, en je krijgt er een groen paradijsje bij huis voor terug, dat je het hele jaar blijft verrassen.
-# Tijdelijke foto van Unsplash. Vervang door een eigen foto, bv. /assets/img/ecologische-tuin.jpg
-afbeelding: https://images.unsplash.com/photo-1783236307445-88d216c14f9f?w=1600&q=80&auto=format&fit=crop
-afbeelding_alt: Bloeiende zonnehoed in een bloemrijke border
+afbeelding: /assets/img/ecologische-tuin.jpg
+afbeelding_alt: Een natuurlijke tuin met fruitboom, houten hekje en bloeiende planten
+afbeelding_staand: true
+
+# Planten onderaan de pagina. Foto's staan in assets/img/planten/
+planten_titel: Planten die ik graag gebruik
+planten_intro: Inheemse planten zijn gewend aan onze bodem en ons klimaat, en bieden voedsel en beschutting aan insecten en vogels. Een paar favorieten.
+planten:
+  - naam: Boerenwormkruid
+    foto: /assets/img/planten/boerenwormkruid.jpg
+    tekst: Gele knoopjes van juli tot in de herfst, geliefd bij zweefvliegen en kevers.
+  - naam: Wilde peen
+    foto: /assets/img/planten/wilde-peen.jpg
+    tekst: Sierlijke witte schermen, een feestmaal voor talloze insecten.
+  - naam: Grote kattenstaart
+    foto: /assets/img/planten/kattenstaart.jpg
+    tekst: Paarse aren op natte plekken, bijvoorbeeld langs een wadi of poel.
+  - naam: Vingerhoedskruid
+    foto: /assets/img/planten/vingerhoedskruid.jpg
+    tekst: Hoge bloemtrossen in de halfschaduw, een favoriet van hommels.
 ---
 
 ## Wat maakt een tuin ecologisch?

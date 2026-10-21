@@ -4,9 +4,8 @@ permalink: /ecohoeve/
 label: Ecohoeve · een droom in wording
 kop: Een plek waar wonen, tuinieren en natuur samenkomen
 intro: Naast de studio werken we aan een grotere droom, een Ecohoeve. Een plek waar we laten zien hoe mooi het is om met de natuur te leven in plaats van ertegenin.
-# Tijdelijke foto van Unsplash. Vervang door een eigen foto, bv. /assets/img/ecohoeve.jpg
-afbeelding: https://images.unsplash.com/photo-1715687429391-2a0446555c96?w=1600&q=80&auto=format&fit=crop
-afbeelding_alt: Een bloeiende weide met witte bloemen onder fruitbomen
+afbeelding: /assets/img/ecohoeve.jpg
+afbeelding_alt: Een houten huisje in het groen, in het warme avondlicht
 ---
 
 ## De droom
