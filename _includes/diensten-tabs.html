@@ -1,18 +1,14 @@
 {%- comment -%}
   Diensten als tabbladen. De inhoud staat bovenin werkwijze.md onder  diensten:
-  Zonder JavaScript staan alle diensten gewoon onder elkaar.
+  Op desktop tabbladen, op mobiel een accordeon. Zonder JavaScript staan alle diensten gewoon onder elkaar.
 {%- endcomment -%}
-<div class="gn-tabs" data-gn-tabs>
-  <div class="gn-tabs__lijst" role="tablist" aria-label="Diensten">
-    {%- for d in page.diensten %}
-    <button class="gn-tabs__tab" type="button" role="tab" id="dienst-tab-{{ forloop.index }}" aria-controls="dienst-{{ forloop.index }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}>
-      <span class="gn-tabs__naam">{{ d.titel }}</span>
-      <span class="gn-tabs__prijs">{{ d.prijs }}</span>
-    </button>
-    {%- endfor %}
-  </div>
+<div class="gn-tabs" data-gn-tabs style="--n: {{ page.diensten | size }}">
   {%- for d in page.diensten %}
-  <section class="gn-tabs__paneel" role="tabpanel" id="dienst-{{ forloop.index }}" aria-labelledby="dienst-tab-{{ forloop.index }}" tabindex="0">
+  <button class="gn-tabs__tab" type="button" id="dienst-knop-{{ forloop.index }}" aria-controls="dienst-{{ forloop.index }}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+    <span class="gn-tabs__naam">{{ d.titel }}</span>
+    <span class="gn-tabs__prijs">{{ d.prijs }}</span>
+  </button>
+  <section class="gn-tabs__paneel" id="dienst-{{ forloop.index }}" aria-labelledby="dienst-knop-{{ forloop.index }}">
     <h3 class="gn-tabs__titel">{{ d.titel }}</h3>
     <p>{{ d.tekst }}</p>
     {%- if d.punten %}
@@ -34,30 +30,35 @@
 </div>
 <script>
 (function () {
+  // Desktop: tabbladen (altijd één dienst open). Mobiel: accordeon (kopje en inhoud onder elkaar, mag ook dicht).
+  var mobiel = window.matchMedia('(max-width: 600px)');
   document.querySelectorAll('[data-gn-tabs]').forEach(function (box) {
-    var tabs = [].slice.call(box.querySelectorAll('[role=tab]'));
-    var panelen = [].slice.call(box.querySelectorAll('[role=tabpanel]'));
+    var knoppen = [].slice.call(box.querySelectorAll('.gn-tabs__tab'));
+    var panelen = [].slice.call(box.querySelectorAll('.gn-tabs__paneel'));
     box.classList.add('is-actief');
-    function kies(i, focus) {
-      tabs.forEach(function (t, j) {
+    function zet(i) {
+      knoppen.forEach(function (k, j) {
         var aan = i === j;
-        t.setAttribute('aria-selected', aan);
-        t.tabIndex = aan ? 0 : -1;
+        k.setAttribute('aria-expanded', aan);
         panelen[j].hidden = !aan;
       });
-      if (focus) tabs[i].focus();
     }
-    tabs.forEach(function (t, i) {
-      t.addEventListener('click', function () { kies(i); });
-      t.addEventListener('keydown', function (e) {
-        var n = tabs.length, k = e.key;
-        if (k === 'ArrowRight' || k === 'ArrowDown') { e.preventDefault(); kies((i + 1) % n, true); }
-        if (k === 'ArrowLeft' || k === 'ArrowUp') { e.preventDefault(); kies((i - 1 + n) % n, true); }
-        if (k === 'Home') { e.preventDefault(); kies(0, true); }
-        if (k === 'End') { e.preventDefault(); kies(n - 1, true); }
+    knoppen.forEach(function (k, i) {
+      k.addEventListener('click', function () {
+        var open = k.getAttribute('aria-expanded') === 'true';
+        if (open && mobiel.matches) { zet(-1); return; }
+        zet(i);
+        if (mobiel.matches) {
+          var top = k.getBoundingClientRect().top;
+          if (top < 70) k.scrollIntoView({ block: 'start', behavior: 'smooth' });
+        }
       });
     });
-    kies(0);
+    // Terug naar desktop met alles dicht? Dan de eerste weer openen.
+    mobiel.addEventListener('change', function () {
+      if (!mobiel.matches && !knoppen.some(function (k) { return k.getAttribute('aria-expanded') === 'true'; })) zet(0);
+    });
+    zet(0);
   });
 })();
 </script>
