@@ -1,0 +1,11 @@
+{%- comment -%}
+  Een afbeelding met (optioneel) bijschrift, die alleen verschijnt als het bestand bestaat.
+  Gebruik: include schets.html src="/assets/img/ecohoeve/familie.jpg" alt="..." bijschrift="..." kant="rechts"
+{%- endcomment -%}
+{%- assign _s = site.static_files | where: "path", include.src | first -%}
+{%- if _s -%}
+<figure class="gn-schets{% if include.kant %} gn-schets--{{ include.kant }}{% endif %}">
+  <img src="{{ include.src | relative_url }}" alt="{{ include.alt }}" loading="lazy">
+  {%- if include.bijschrift %}<figcaption>{{ include.bijschrift }}</figcaption>{% endif %}
+</figure>
+{%- endif -%}
