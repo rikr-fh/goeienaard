@@ -16,7 +16,8 @@ voorwaarden: /algemene-voorwaarden/
 # Leeg laten = geen formulier, alleen de mail- en belknop.
 formspree: "xoejgnzo"
 
-baseurl: "/skills-github-pages"
+# Leeg, want de site draait op een eigen domein (www.goeienaard.nl)
+baseurl: ""
 permalink: /projecten/:title/
 
 # Het menu bovenaan (de Ecohoeve staat op de homepage en in de footer)
