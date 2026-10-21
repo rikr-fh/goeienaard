@@ -12,6 +12,10 @@ regio: Tilburg en Midden-Brabant
 # Zet hier de link naar de algemene voorwaarden zodra die online staan, bv. /assets/algemene-voorwaarden.pdf
 voorwaarden: /algemene-voorwaarden/
 
+# Kennismakingsformulier via Formspree: zet hier de formuliercode (bv. xyzabcd).
+# Leeg laten = geen formulier, alleen de mail- en belknop.
+formspree: "xoejgnzo"
+
 baseurl: "/skills-github-pages"
 permalink: /projecten/:title/
 

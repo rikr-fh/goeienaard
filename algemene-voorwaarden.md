@@ -200,6 +200,9 @@ Studio Goeienaard verwerkt jouw persoonsgegevens voor de volgende doelen:
 - Je te kunnen bellen of e-mailen indien dit nodig is om onze dienstverlening uit te kunnen voeren
 
 - Om goederen en diensten bij je af te leveren
+{% if site.formspree and site.formspree != "" %}
+- Om te reageren op je aanvraag voor een kennismaking via het formulier op de website
+{% endif %}
 
 ## Hoe lang we persoonsgegevens bewaren
 
@@ -208,6 +211,9 @@ Studio Goeienaard bewaart je persoonsgegevens niet langer dan strikt nodig is om
 ## Delen van persoonsgegevens met derden
 
 Studio Goeienaard deelt alleen persoonsgegevens met derden, die relevant zijn voor levering van onze diensten, bijvoorbeeld een hovenier of kweker.
+{% if site.formspree and site.formspree != "" %}
+Vul je het kennismakingsformulier op de website in, dan worden je gegevens doorgestuurd via Formspree, een dienst die het formulier per e-mail bij Studio Goeienaard aflevert. Formspree is gevestigd in de Verenigde Staten. Studio Goeienaard gebruikt deze gegevens alleen om contact met je op te nemen over je aanvraag.
+{% endif %}
 
 ## Cookies, of vergelijkbare technieken, die wij gebruiken
 
