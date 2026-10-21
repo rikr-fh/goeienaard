@@ -2,6 +2,7 @@
 title: Blote Voetentuin
 date: 2024-10-05
 permalink: /projecten/blote-voetentuin/
+plaats: Berkel-Enschot
 type: Ontwerp achter- en voortuin
 samenvatting: Een tuin voor het hele gezin, om op blote voeten te ontdekken. Een paradijsje om in te spelen en tot rust te komen.
 # Foto's: assets/img/projecten/blote-voetentuin/  (01.jpg is de grote foto)
