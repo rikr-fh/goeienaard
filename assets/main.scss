@@ -483,3 +483,9 @@ html.gn-lb-open { overflow: hidden; }
 @media (max-width: 600px) { .gn-form__rij { grid-template-columns: 1fr; } }
 .gn-kennismaking__stappen { padding-left: 1.25rem; margin-left: 0; }
 .gn-form[hidden], .gn-form__bedankt[hidden] { display: none !important; }
+
+/* Footer: logo + woordmerk */
+.gn-footer__merk { display: inline-flex; align-items: flex-end; gap: .9rem; margin-bottom: 1rem; text-decoration: none !important; }
+.gn-footer__logo { height: 48px; width: auto; display: block; }
+.gn-footer__woordmerk { height: 36px; width: auto; display: block; margin-bottom: 2px; }
+.gn-footer__merk:hover .gn-footer__logo, .gn-footer__merk:hover .gn-footer__woordmerk { opacity: .8; }
