@@ -128,8 +128,8 @@
           <h2>{{ page.kennismaken.titel }}</h2>
           <p>{{ page.kennismaken.tekst }}</p>
           <div class="gn-acties">
-            <a class="gn-knop" href="mailto:{{ page.kennismaken.email }}">Mail {{ page.kennismaken.email }}</a>
-            <a class="gn-knop gn-knop--licht" href="{{ '/contact/' | relative_url }}">Naar contact</a>
+            <a class="gn-knop" href="{{ '/contact/#kennismaking' | relative_url }}">Vraag een kennismaking aan</a>
+            <a class="gn-knop gn-knop--licht" href="mailto:{{ page.kennismaken.email }}">Mail {{ page.kennismaken.email }}</a>
           </div>
           {%- if page.kennismaken.geruststelling %}
           <p class="gn-cta__klein">{{ page.kennismaken.geruststelling }}</p>
