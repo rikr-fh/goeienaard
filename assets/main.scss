@@ -489,3 +489,6 @@ html.gn-lb-open { overflow: hidden; }
 .gn-footer__logo { height: 48px; width: auto; display: block; }
 .gn-footer__woordmerk { height: 36px; width: auto; display: block; margin-bottom: 2px; }
 .gn-footer__merk:hover .gn-footer__logo, .gn-footer__merk:hover .gn-footer__woordmerk { opacity: .8; }
+.gn-footer__merk { align-items: center; gap: 1rem; }
+.gn-footer__logo { height: 56px; }
+.gn-footer__woordmerk { height: 46px; margin-bottom: 0; }
