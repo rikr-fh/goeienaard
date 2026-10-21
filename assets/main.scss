@@ -541,3 +541,21 @@ html.gn-lb-open { overflow: hidden; }
 .gn-faq__antwoord p { margin: 0 0 .6rem; }
 @media (prefers-reduced-motion: reduce) { .gn-faq__vraag::after { transition: none; } }
 .gn-tekst .gn-vinkjes, .gn-tabs .gn-vinkjes { margin-left: 0; }
+
+/* Diensten: tabbladen (desktop) / accordeon (mobiel) */
+.gn-tabs.is-actief { display: grid; grid-template-columns: repeat(var(--n, 3), 1fr); column-gap: .5rem; }
+.gn-tabs:not(.is-actief) .gn-tabs__tab { display: none; }
+.gn-tabs.is-actief .gn-tabs__tab { grid-row: 1; margin-bottom: .75rem; }
+.gn-tabs.is-actief .gn-tabs__paneel { grid-row: 2; grid-column: 1 / -1; }
+.gn-tabs__tab[aria-expanded=true] { background: var(--groen); border-color: var(--groen); color: #fff; }
+.gn-tabs__tab[aria-expanded=true] .gn-tabs__prijs { color: #F4EFE6; opacity: .85; }
+@media (max-width: 600px) {
+  .gn-tabs.is-actief { display: block; }
+  .gn-tabs.is-actief .gn-tabs__tab { width: 100%; margin: .5rem 0 0; position: relative; padding-right: 2.75rem; scroll-margin-top: 5rem; }
+  .gn-tabs__tab::after { content: ""; position: absolute; right: 1.1rem; top: 50%; width: .55rem; height: .55rem; margin-top: -.4rem;
+    border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform .2s; opacity: .7; }
+  .gn-tabs__tab[aria-expanded=true]::after { transform: rotate(-135deg); margin-top: -.1rem; }
+  .gn-tabs__tab[aria-expanded=true] { border-radius: 14px 14px 0 0; }
+  .gn-tabs.is-actief .gn-tabs__paneel { border-radius: 0 0 14px 14px; margin: 0; border: 1px solid var(--groen); border-top: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .gn-tabs__tab::after { transition: none; } }
