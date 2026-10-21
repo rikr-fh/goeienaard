@@ -403,3 +403,23 @@ html.gn-lb-open { overflow: hidden; }
   .gn-projectnav__leeg { display: none; }
   .gn-projectnav__beeld { flex-basis: 64px; height: 64px; }
 }
+
+/* ───────────── Aanbevelingen ───────────── */
+.gn-aanbevelingen { padding-bottom: 2rem; }
+.gn-quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+.gn-quote { margin: 0; background: #fff; border-radius: 18px; padding: 1.75rem 1.75rem 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; position: relative; }
+.gn-quote::before { content: "“"; font-family: Fraunces, serif; font-size: 4rem; line-height: .6; color: var(--klei); opacity: .5; }
+.gn-quote blockquote { margin: 0; padding: 0; border: 0; font-family: Fraunces, serif; font-size: 1.12rem; line-height: 1.55; color: #2B2B26; letter-spacing: 0; font-style: normal; }
+.gn-quote figcaption { margin-top: auto; font-size: .85rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--groen); }
+
+/* ───────────── Schetsen in de tekst (Ecohoeve) ───────────── */
+.gn-schets { margin: 2rem 0; }
+.gn-schets img { display: block; width: 100%; border-radius: 16px; background: #fff; }
+.gn-schets figcaption { font-size: .9rem; color: #5A5A50; margin-top: .6rem; }
+@media (min-width: 900px) {
+  .gn-schets--rechts, .gn-schets--links { width: 42%; margin-top: .25rem; }
+  .gn-schets--rechts { float: right; margin-left: 2rem; }
+  .gn-schets--links { float: left; margin-right: 2rem; }
+  .gn-tekst h2 { clear: both; }
+}
+@media (min-width: 1100px) { .gn-schets--rechts { margin-right: -14rem; } }
