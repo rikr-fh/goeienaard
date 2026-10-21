@@ -359,3 +359,23 @@ html.gn-lb-open { overflow: hidden; }
   .gn-lb, .gn-lb__img, .gn-foto__link img { transition: none; }
 }
 .gn-foto__label { pointer-events: none; z-index: 1; }
+
+/* ───────────── Pagina-kop met staande foto ───────────── */
+.gn-pagina__kop--staand .wrapper { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 3.5rem; align-items: center; }
+.gn-pagina__staand { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 20px; }
+@media (max-width: 760px) {
+  .gn-pagina__kop--staand .wrapper { grid-template-columns: 1fr; gap: 2rem; }
+  .gn-pagina__staand { aspect-ratio: 4 / 3; }
+}
+
+/* ───────────── Planten die ik graag gebruik ───────────── */
+.gn-planten { padding: 1rem 0 4rem; }
+.gn-planten h2 { font-size: clamp(1.6rem, 3.2vw, 2rem); margin-bottom: .75rem; }
+.gn-planten__intro { max-width: 42rem; margin-bottom: 2rem; }
+.gn-planten__raster { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.gn-plant { margin: 0; }
+.gn-plant img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.gn-plant figcaption { padding-top: .7rem; font-size: .92rem; line-height: 1.45; }
+.gn-plant figcaption strong { display: block; font-family: Fraunces, serif; font-weight: 400; font-size: 1.15rem; color: var(--groen); }
+.gn-plant figcaption span { color: #5A5A50; }
+@media (max-width: 760px) { .gn-planten__raster { grid-template-columns: repeat(2, 1fr); } }
