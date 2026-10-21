@@ -2,7 +2,10 @@
 <footer class="site-footer gn-footer">
   <div class="wrapper gn-footer__grid">
     <div>
-      <p class="gn-footer__naam">{{ site.title | escape }}</p>
+      <a class="gn-footer__merk" href="{{ '/' | relative_url }}" aria-label="{{ site.title | escape }}, naar de homepage">
+        <img class="gn-footer__logo" src="{{ '/assets/img/logo.svg' | relative_url }}" alt="" width="142" height="182" loading="lazy">
+        <img class="gn-footer__woordmerk" src="{{ '/assets/img/wordmark.svg' | relative_url }}" alt="{{ site.title | escape }}" width="632" height="179" loading="lazy">
+      </a>
       <p>{{ site.description | escape }}</p>
       <p class="gn-footer__slogan">Samen kom je tot bloei</p>
     </div>
