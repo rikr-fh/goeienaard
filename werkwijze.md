@@ -55,7 +55,9 @@ faq:
       Zeker niet. Elke tegel die eruit gaat en elke plant die erin komt, telt. Voor kleine tuinen of een deel van de tuin is er de mini-tuinmetamorfose.
 ---
 
-## 1. Ontmoeting
+## Zo werken we samen
+
+<h3 class="gn-stapkop" data-nr="1">Ontmoeting</h3>
 
 We maken kennis aan de telefoon, of met een kort bezoek aan je tuin als je in de buurt woont. Zo leer ik jou en je tuin beter kennen. Wie ben je, en wat zoek je in een tuin? Welk gevoel moet de tuin je geven, en wat wil je er beleven? Ik vertel je ook wat een ecologische tuin is, en wat die voor jou kan betekenen.
 
@@ -63,22 +65,22 @@ We maken kennis aan de telefoon, of met een kort bezoek aan je tuin als je in de
 - **Daarna:** je ontvangt een offerte op maat. Pas als je die goedkeurt, gaan we aan de slag.
 {: .gn-stapfeiten}
 
-## 2. Ontdekking
+<h3 class="gn-stapkop" data-nr="2">Ontdekking</h3>
 
 Je wensen werk ik uit tot een visie, de basis van het ontwerp. Ik breng in beeld wat er moet, wat er kan en waar de grenzen liggen. Daarnaast verzamel ik alle praktische informatie, zoals de ligging en afmetingen van de tuin en de grondsoort.
 
-## 3. Schetsontwerp
+<h3 class="gn-stapkop" data-nr="3">Schetsontwerp</h3>
 
 Alles wat ik heb verzameld, komt samen in een voorlopig ontwerp. Ik leg je één of meer schetsen voor, en samen bespreken we de mogelijkheden. Dit is het moment om keuzes te maken en het ontwerp bij te stellen waar nodig.
 
-## 4. Definitief ontwerp
+<h3 class="gn-stapkop" data-nr="4">Definitief ontwerp</h3>
 
 Een tuin van Studio Goeienaard is meer dan een ontwerptekening. Je krijgt een complete gids die je stap voor stap meeneemt door het ontwerp, de beplanting en de materialen. Er staat ook in hoe je de tuin ecologisch aanlegt en onderhoudt, en hoe je als luie, gelukkige tuinier geniet van een tuin vol natuur.
 
 - **Wat je krijgt:** handgetekende ontwerpen en sfeerbeelden op A3, een uitgebreid beplantingsplan met bestellijst, een ontwerp voor materialen en verlichting, en een digitale gids voor aanleg en onderhoud.
 {: .gn-stapfeiten}
 
-## 5. Aanleg & terugblik
+<h3 class="gn-stapkop" data-nr="5">Aanleg &amp; terugblik</h3>
 
 Je kunt de tuin zelf aanleggen, met de tips uit de gids. Je kunt ook een hovenier inschakelen. Ik breng je graag in contact met een ecologisch hovenier, en kan helpen met de levering van biologische planten.
 
