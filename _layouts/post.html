@@ -67,6 +67,14 @@
           {%- endfor %}
         </div>
         {%- endif %}
+        {%- comment -%} Aanbeveling bij dit project: komt uit index.md (aanbevelingen met project: deze pagina) {%- endcomment -%}
+        {%- assign _home = site.pages | where: "path", "index.md" | first -%}
+        {%- for a in _home.aanbevelingen %}{% if a.project == page.url %}
+        <figure class="gn-projectquote">
+          <blockquote>{{ a.tekst }}</blockquote>
+          <figcaption>{{ a.naam }}</figcaption>
+        </figure>
+        {%- endif %}{% endfor %}
         {%- comment -%} Vorig / volgend project, in dezelfde volgorde als op de projectenpagina {%- endcomment -%}
         <nav class="gn-projectnav" aria-label="Meer projecten">
           {%- assign buren = "" | split: "" -%}
