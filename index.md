@@ -10,7 +10,7 @@ description: Ecologisch tuinontwerp in en rond Tilburg. Nodig de natuur uit in j
 # ─────────────────────────────────────────────────────────────
 
 hero:
-  label: Ecologische tuinen · Tilburg en omgeving
+  label: Ecologisch tuinontwerp
   titel: Nodig de natuur uit in je tuin
   tekst: Een tuin waarin de planten, de dieren en jij het goed hebben. Ik ontwerp ecologische tuinen die het hele jaar bloeien, groeien en leven, en waar jij elke dag van geniet.
   afbeelding: /assets/img/hero-tuin.jpg
