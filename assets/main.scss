@@ -19,7 +19,10 @@ hr { border: none; height: 2rem; }          /* geen harde lijnen, maar witruimte
 
 /* ───────────── Homepage (layout: home) ───────────── */
 
-:root { --groen-donker: #2E4329; --lijn: rgba(63, 90, 58, .15); }
+:root { --groen-donker: #2E4329; --lijn: rgba(63, 90, 58, .15);
+  --lijn-stap: rgba(63, 90, 58, .3);   /* lijn boven stappen: 1px, zachter dan groen */
+  --rand-knop: 2px;                    /* rand van de lichte knop */
+}
 
 .gn-home { padding: 0; }
 .gn-home h2, .gn-home h3 { letter-spacing: -0.01em; }
@@ -37,7 +40,7 @@ hr { border: none; height: 2rem; }          /* geen harde lijnen, maar witruimte
   transition: background .2s ease, transform .2s ease;
 }
 .gn-knop:hover { background: var(--groen-donker); transform: translateY(-1px); }
-.gn-knop--licht { background: transparent; color: var(--groen) !important; box-shadow: inset 0 0 0 1.5px var(--groen); }
+.gn-knop--licht { background: transparent; color: var(--groen) !important; box-shadow: inset 0 0 0 var(--rand-knop) var(--groen); }
 .gn-knop--licht:hover { background: var(--groen); color: #fff !important; }
 
 /* Hero */
@@ -58,7 +61,7 @@ hr { border: none; height: 2rem; }          /* geen harde lijnen, maar witruimte
 .gn-hero__tekst { font-size: 1.15rem; max-width: 34rem; opacity: .92; margin: 0; }
 .gn-hero .gn-knop { background: #fff; color: var(--groen) !important; }
 .gn-hero .gn-knop:hover { background: var(--zand); }
-.gn-hero .gn-knop--licht { background: transparent; color: #fff !important; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.7); }
+.gn-hero .gn-knop--licht { background: transparent; color: #fff !important; box-shadow: inset 0 0 0 var(--rand-knop) rgba(255,255,255,.7); }
 .gn-hero .gn-knop--licht:hover { background: rgba(255,255,255,.12); }
 
 /* Secties */
@@ -89,7 +92,7 @@ hr { border: none; height: 2rem; }          /* geen harde lijnen, maar witruimte
 /* Stappen */
 .gn-stappen { list-style: none; margin: 0; padding: 0; counter-reset: stap;
   display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
-.gn-stappen li { counter-increment: stap; border-top: 1.5px solid var(--groen); padding-top: 1.25rem; }
+.gn-stappen li { counter-increment: stap; border-top: 1px solid var(--lijn-stap); padding-top: 1.25rem; }
 .gn-stappen li::before { content: counter(stap); font-family: Fraunces, serif; font-size: 2.25rem; color: var(--klei); line-height: 1; display: block; margin-bottom: .75rem; }
 .gn-stappen h3 { font-size: 1.2rem; margin-bottom: .35rem; }
 .gn-stappen p { margin: 0; }
@@ -99,7 +102,7 @@ hr { border: none; height: 2rem; }          /* geen harde lijnen, maar witruimte
 .gn-ecohoeve h2 { color: #fff !important; line-height: 1.2; font-size: clamp(1.6rem, 3.5vw, 2.2rem); max-width: 20ch; }
 .gn-ecohoeve p { max-width: 36rem; opacity: .9; }
 .gn-ecohoeve .gn-label { color: #F2D7C2; }
-.gn-ecohoeve .gn-knop--licht { color: #fff !important; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.7); margin-top: .5rem; }
+.gn-ecohoeve .gn-knop--licht { color: #fff !important; box-shadow: inset 0 0 0 var(--rand-knop) rgba(255,255,255,.7); margin-top: .5rem; }
 .gn-ecohoeve .gn-knop--licht:hover { background: rgba(255,255,255,.12); }
 
 /* Kennismaken */
@@ -632,7 +635,7 @@ html.gn-lb-open { overflow: hidden; }
 .gn-tekst, .gn-projectquote, .gn-tekst--breed > p, .gn-tekst--breed > ul, .gn-tekst--breed > ol, .gn-tekst--breed > h2, .gn-tekst--breed > h3 { max-width: var(--kolom-tekst); }
 
 /* 3. Werkwijze-stappen in dezelfde vorm als op de homepage: groot terracotta nummer met lijn erboven */
-.gn-tekst h3.gn-stapkop { border-top: 1.5px solid var(--groen); padding-top: 1.25rem; margin: 2.75rem 0 .5rem; }
+.gn-tekst h3.gn-stapkop { border-top: 1px solid var(--lijn-stap); padding-top: 1.25rem; margin: 2.75rem 0 .5rem; }
 .gn-tekst h2 + h3.gn-stapkop { margin-top: 1.5rem; }
 .gn-tekst h3.gn-stapkop::before { content: attr(data-nr); display: block; font-family: Fraunces, serif; font-size: 2.25rem; color: var(--klei); line-height: 1; margin-bottom: .75rem; }
 .gn-tekst .gn-stapfeiten { background: none; padding: .1rem 0 .1rem 1rem; border-left: 2px solid rgba(181, 113, 75, .35); border-radius: 0; font-size: .97rem; }
