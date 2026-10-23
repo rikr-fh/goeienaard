@@ -11,13 +11,6 @@ kennismaken: false
 
 ## Vertel me over je tuin
 
-/**
-1. **{% if site.formspree and site.formspree != "" %}Je vult het formulier hieronder in.{% else %}Je stuurt me een berichtje of belt.{% endif %}** Een paar zinnen over je tuin is genoeg.
-2. **Ik neem binnen een paar werkdagen contact met je op.**
-3. **We maken kennis.** Aan de telefoon, of met een kort bezoek aan je tuin als je in de buurt woont. Dit eerste gesprek is gratis.
-{: .gn-kennismaking__stappen}
-**/
-
 {% if site.formspree and site.formspree != "" %}
 {% include kennismaking-form.html %}
 <p class="gn-form__alt">Liever direct contact? Mail naar <a href="mailto:{{ site.email }}">{{ site.email }}</a> of bel <a href="tel:{{ site.telefoon | remove: ' ' }}">{{ site.telefoon }}</a>.</p>
