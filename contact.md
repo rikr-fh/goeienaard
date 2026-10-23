@@ -9,12 +9,14 @@ kennismaken: false
 
 <div id="kennismaking" class="gn-kennismaking" markdown="1">
 
-## Kennismaking aanvragen
+## Vertel me over je tuin
 
+/**
 1. **{% if site.formspree and site.formspree != "" %}Je vult het formulier hieronder in.{% else %}Je stuurt me een berichtje of belt.{% endif %}** Een paar zinnen over je tuin is genoeg.
 2. **Ik neem binnen een paar werkdagen contact met je op.**
 3. **We maken kennis.** Aan de telefoon, of met een kort bezoek aan je tuin als je in de buurt woont. Dit eerste gesprek is gratis.
 {: .gn-kennismaking__stappen}
+**/
 
 {% if site.formspree and site.formspree != "" %}
 {% include kennismaking-form.html %}
