@@ -15,7 +15,7 @@ hero:
   tekst: Een tuin waarin de planten, de dieren en jij het goed hebben. Ik ontwerp ecologische tuinen die het hele jaar bloeien, groeien en leven, en waar jij elke dag van geniet.
   afbeelding: /assets/img/hero-tuin.jpg
   knop:
-    tekst: Vraag een gratis kennismaking aan
+    tekst: Laten we kennis maken
     link: /contact/#kennismaking
   link:
     tekst: Bekijk mijn werk
