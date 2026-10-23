@@ -1,0 +1,472 @@
+---
+# Design system van Studio Goeienaard — alleen voor Rik.
+# Staat niet in het menu en niet in Google (zie 'robots' hieronder).
+# Deze pagina gebruikt de échte main.css van de site: pas je daar iets aan,
+# dan verandert het hier vanzelf mee.
+layout: null
+permalink: /design-system/
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Design system · Studio Goeienaard</title>
+<link rel="icon" type="image/svg+xml" href="/assets/img/logo.svg">
+<link rel="stylesheet" href="/assets/main.css">
+<style>
+/* Alleen de opmaak van déze pagina (ds-). Alles wat ‘gn-’ heet komt uit main.css. */
+.ds { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 4rem; max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
+.ds-nav { position: sticky; top: 0; align-self: start; padding: 3rem 0; }
+.ds-nav img { height: 56px; display: block; margin-bottom: 2rem; }
+.ds-nav ol { list-style: none; margin: 0; padding: 0; counter-reset: ds; }
+.ds-nav li { counter-increment: ds; }
+.ds-nav a { display: flex; gap: .75rem; padding: .4rem 0; color: #2B2B26; text-decoration: none; font-size: .95rem; }
+.ds-nav a::before { content: "0" counter(ds); font-family: Fraunces, serif; color: var(--klei); width: 1.5rem; }
+.ds-nav a:hover, .ds-nav a.is-hier { color: var(--groen); }
+.ds-nav a.is-hier { font-weight: 500; }
+
+.ds-main { padding: 3rem 0 6rem; min-width: 0; }
+.ds-intro { padding-bottom: 3rem; border-bottom: 1px solid var(--lijn); }
+.ds-intro h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.05; margin: 0 0 1rem; }
+.ds-intro p { max-width: var(--kolom-intro); font-size: 1.15rem; color: #4A4A42; margin: 0; }
+
+.ds-sectie { padding: 4.5rem 0 1rem; scroll-margin-top: 1rem; }
+.ds-sectie > h2 { font-size: var(--h2); line-height: 1.15; margin: 0 0 .75rem; }
+.ds-sectie > p { max-width: var(--kolom-tekst); margin: 0 0 2rem; }
+.ds-sectie > .ds-sub, .ds-sub { font-family: Inter, sans-serif; font-size: .75rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--klei); margin: 2.5rem 0 1rem; }
+
+.ds-vlak { background: #fff; border-radius: var(--r-kaart); padding: 2rem; }
+.ds-vlak--zand { background: var(--zand); box-shadow: inset 0 0 0 1px var(--lijn); }
+.ds-vlak--groen { background: var(--groen); }
+.ds-raster { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+.ds-rij { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+
+/* Logo */
+.ds-logos { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+.ds-logo { margin: 0; }
+.ds-logo > div { display: grid; place-items: center; height: 170px; border-radius: var(--r-kaart); background: #fff; padding: 1.5rem; }
+.ds-logo > div.ds-vlak--groen { background: var(--groen); }
+.ds-logo img { max-height: 110px; max-width: 100%; }
+.ds-logo figcaption { display: flex; flex-wrap: wrap; gap: 0 .75rem; justify-content: space-between; align-items: baseline; padding-top: .6rem; font-size: .9rem; }
+.ds-logo figcaption a { font-size: .85rem; }
+
+/* Kleuren */
+.ds-kleur { background: #fff; border-radius: var(--r-kaart); overflow: hidden; display: flex; flex-direction: column; }
+.ds-kleur__staal { height: 110px; position: relative; box-shadow: inset 0 -1px 0 var(--lijn); }
+.ds-kleur__tekst { padding: .9rem 1rem 1rem; display: grid; gap: .15rem; font-size: .9rem; line-height: 1.4; }
+.ds-kleur__naam { font-weight: 500; }
+.ds-kleur__rol { color: #5A5A50; font-size: .85rem; }
+.ds-contrast { position: absolute; left: .6rem; bottom: .6rem; display: flex; gap: .3rem; }
+.ds-contrast span { white-space: nowrap; font-size: .7rem; font-weight: 500; padding: .15rem .45rem; border-radius: 999px; background: rgba(255,255,255,.85); color: #2B2B26; }
+.ds-geentoken { font-size: .72rem; color: #5A5A50; font-style: italic; }
+
+/* Kopieerknopjes */
+.ds-kopieer { font: inherit; font-size: .82rem; font-variant-numeric: tabular-nums; border: 0; background: none; padding: 0; cursor: pointer;
+color: #2B2B26; text-align: left; display: inline-flex; align-items: center; gap: .4rem; border-radius: 6px; }
+.ds-kopieer code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .8rem; background: none; border: 0; padding: 0; color: inherit; }
+.ds-kopieer::after { content: "Kopieer"; font-size: .7rem; color: var(--klei); opacity: 0; transition: opacity .15s; }
+.ds-kopieer:hover::after, .ds-kopieer:focus-visible::after { opacity: 1; }
+.ds-kopieer.is-gekopieerd::after { content: "Gekopieerd ✓"; opacity: 1; color: var(--groen); }
+.ds-kopieer:focus-visible { outline: 2px solid var(--klei); outline-offset: 2px; }
+
+/* Typografie */
+.ds-letters { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.ds-letter { background: #fff; border-radius: var(--r-kaart); padding: 1.75rem; }
+.ds-letter__groot { font-size: 4.5rem; line-height: 1; color: var(--groen); margin-bottom: 1rem; }
+.ds-letter__abc { font-size: 1.1rem; line-height: 1.5; color: #4A4A42; word-break: break-all; }
+.ds-schaal { background: #fff; border-radius: var(--r-kaart); }
+.ds-schaal__rij { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 1.5rem; align-items: baseline; padding: 1.4rem 1.75rem; border-bottom: 1px solid var(--lijn); }
+.ds-schaal__rij:last-child { border-bottom: 0; }
+.ds-schaal__meta { font-size: .82rem; line-height: 1.5; color: #5A5A50; }
+.ds-schaal__meta strong { display: block; color: #2B2B26; font-weight: 500; font-size: .9rem; }
+.ds-schaal__voorbeeld > * { margin: 0 !important; max-width: none !important; }
+
+/* Fundament */
+.ds-hoek { display: grid; gap: .6rem; font-size: .85rem; }
+.ds-hoek__vorm { height: 96px; background: var(--groen); opacity: .9; }
+.ds-maat { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 1.5rem; align-items: center; padding: .9rem 0; border-bottom: 1px solid var(--lijn); font-size: .9rem; }
+.ds-maat:last-child { border-bottom: 0; }
+.ds-maat__balk { height: 14px; background: var(--klei); border-radius: 999px; opacity: .75; max-width: 100%; }
+.ds-schaduw { height: 110px; background: #fff; border-radius: var(--r-kaart); display: grid; place-items: center; font-size: .85rem; color: #5A5A50; }
+
+/* Componenten */
+.ds-comp { margin-bottom: 3rem; }
+.ds-comp__kop { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: .9rem; }
+.ds-comp__kop h3 { margin: 0; font-size: var(--h3); }
+.ds-comp__kop code { font-size: .8rem; background: none; border: 0; color: #5A5A50; }
+.ds-comp__noot { font-size: .9rem; color: #5A5A50; margin: .75rem 0 0; max-width: var(--kolom-tekst); }
+
+@media (max-width: 860px) {
+.ds { grid-template-columns: 1fr; gap: 0; padding: 0 1.25rem; }
+.ds-nav { position: static; padding: 2rem 0 0; }
+.ds-nav ol { display: flex; flex-wrap: wrap; gap: 0 1.25rem; }
+.ds-letters { grid-template-columns: 1fr; }
+.ds-schaal__rij, .ds-maat { grid-template-columns: 1fr; gap: .5rem; }
+}
+</style>
+</head>
+<body>
+<div class="ds">
+
+<nav class="ds-nav" aria-label="Onderdelen">
+<img src="/assets/img/logo.svg" alt="Studio Goeienaard">
+<ol>
+<li><a href="#logo">Logo</a></li>
+<li><a href="#kleur">Kleur</a></li>
+<li><a href="#typografie">Typografie</a></li>
+<li><a href="#fundament">Fundament</a></li>
+<li><a href="#componenten">Componenten</a></li>
+</ol>
+</nav>
+
+<main class="ds-main">
+
+<header class="ds-intro">
+<p class="gn-label">Studio Goeienaard · intern</p>
+<h1>Design system</h1>
+<p>Een levend overzicht van logo, kleuren, letters, maten en bouwstenen van goeienaard.nl. Deze pagina leest de echte stylesheet, dus wat je hier ziet is wat er op de site staat.</p>
+</header>
+
+<!-- ───────────── 01 Logo ───────────── -->
+<section class="ds-sectie" id="logo">
+<h2>Logo</h2>
+<p>Het huisje met de bloem/boom erin, en het handgeschreven woordmerk. Gebruik de bestanden zoals ze zijn: niet hertekenen, niet uitrekken. Logozwart is puur <code>#000000</code>.</p>
+<div class="ds-logos">
+<figure class="ds-logo">
+<div><img src="/assets/img/logo.svg" alt="Logo"></div>
+<figcaption><span>Beeldmerk</span><a href="/assets/img/logo.svg" download>Download SVG</a></figcaption>
+</figure>
+<figure class="ds-logo">
+<div class="ds-vlak--groen"><img src="/assets/img/logo-wit.svg" alt="Logo wit"></div>
+<figcaption><span>Beeldmerk wit</span><a href="/assets/img/logo-wit.svg" download>Download SVG</a></figcaption>
+</figure>
+<figure class="ds-logo">
+<div><img src="/assets/img/wordmark.svg" alt="Woordmerk"></div>
+<figcaption><span>Woordmerk liggend</span><a href="/assets/img/wordmark.svg" download>Download SVG</a></figcaption>
+</figure>
+<figure class="ds-logo">
+<div><img src="/assets/img/wordmark-verticaal.svg" alt="Woordmerk staand"></div>
+<figcaption><span>Woordmerk staand</span><a href="/assets/img/wordmark-verticaal.svg" download>Download SVG</a></figcaption>
+</figure>
+</div>
+<p class="ds-sub">Combinatie (zoals in de footer)</p>
+<div class="ds-vlak ds-vlak--zand">
+<span class="gn-footer__merk" style="margin:0">
+<img class="gn-footer__logo" src="/assets/img/logo.svg" alt="">
+<img class="gn-footer__woordmerk" src="/assets/img/wordmark-verticaal.svg" alt="">
+</span>
+</div>
+</section>
+
+<!-- ───────────── 02 Kleur ───────────── -->
+<section class="ds-sectie" id="kleur">
+<h2>Kleur</h2>
+<p>Een natuurlijke, aardse basis: bladgroen, zand en klei. Groen draagt de koppen en knoppen, klei geeft accent aan labels, cijfers en links. De labels <em>AA</em> tonen of tekst in die kleur goed leesbaar is op zand en op wit (berekend op deze pagina).</p>
+
+<p class="ds-sub">Tokens</p>
+<div class="ds-raster" data-kleuren>
+<div class="ds-kleur" data-token="--groen" data-naam="Groen" data-rol="Koppen, knoppen, actieve staat"></div>
+<div class="ds-kleur" data-token="--groen-donker" data-naam="Groen donker" data-rol="Hover van knoppen, hero-verloop"></div>
+<div class="ds-kleur" data-token="--klei" data-naam="Klei" data-rol="Accent: labels, cijfers, links"></div>
+<div class="ds-kleur" data-token="--zand" data-naam="Zand" data-rol="Achtergrond van de site"></div>
+</div>
+
+<p class="ds-sub">In gebruik, nog zonder token</p>
+<div class="ds-raster" data-kleuren>
+<div class="ds-kleur" data-hex="#2B2B26" data-naam="Inkt" data-rol="Lopende tekst"></div>
+<div class="ds-kleur" data-hex="#4A4A42" data-naam="Inkt zacht" data-rol="Intro onder paginakop"></div>
+<div class="ds-kleur" data-hex="#5A5A50" data-naam="Inkt rustig" data-rol="Bijschriften, plaatsnamen"></div>
+<div class="ds-kleur" data-hex="#EAE3D6" data-naam="Zand donker" data-rol="Zachte secties, kennismaken-blok"></div>
+<div class="ds-kleur" data-hex="#F2D7C2" data-naam="Perzik" data-rol="Label op groen (hero, Ecohoeve)"></div>
+<div class="ds-kleur" data-hex="#FFFFFF" data-naam="Wit" data-rol="Kaarten, panelen"></div>
+<div class="ds-kleur" data-hex="#000000" data-naam="Logozwart" data-rol="Alleen in het logo"></div>
+<div class="ds-kleur" data-token="--lijn" data-naam="Lijn" data-rol="Scheidingslijnen, kaartrand"></div>
+</div>
+
+<p class="ds-sub">Verlopen</p>
+<div class="ds-raster">
+<div class="ds-kleur">
+<div class="ds-kleur__staal" style="background: radial-gradient(120% 90% at 85% 10%, #7C9A6A 0%, transparent 60%), linear-gradient(160deg, #4E6E46 0%, var(--groen-donker) 100%);"></div>
+<div class="ds-kleur__tekst"><span class="ds-kleur__naam">Hero</span><span class="ds-kleur__rol">Achter de homepage-kop als er geen foto is</span></div>
+</div>
+<div class="ds-kleur">
+<div class="ds-kleur__staal" style="background: linear-gradient(150deg, #A9BC97, #5F7F55);"></div>
+<div class="ds-kleur__tekst"><span class="ds-kleur__naam">Beeld-placeholder</span><span class="ds-kleur__rol">Projectkaart zonder foto</span></div>
+</div>
+<div class="ds-kleur">
+<div class="ds-kleur__staal" style="background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(20,28,18,.65) 100%), linear-gradient(150deg, #A9BC97, #5F7F55);"></div>
+<div class="ds-kleur__tekst"><span class="ds-kleur__naam">Foto-sluier</span><span class="ds-kleur__rol">Over de hero-foto, voor leesbare witte tekst</span></div>
+</div>
+</div>
+</section>
+
+<!-- ───────────── 03 Typografie ───────────── -->
+<section class="ds-sectie" id="typografie">
+<h2>Typografie</h2>
+<p>Fraunces geeft koppen, cijfers en citaten een warme, ambachtelijke vorm. Inter houdt lopende tekst en interface rustig en goed leesbaar.</p>
+<div class="ds-letters">
+<div class="ds-letter">
+<div class="ds-letter__groot" style="font-family: Fraunces, serif;">Aa</div>
+<p class="gn-label" style="margin-bottom:.25rem">Fraunces · 400, 600</p>
+<div class="ds-letter__abc" style="font-family: Fraunces, serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890 €&amp;?!</div>
+</div>
+<div class="ds-letter">
+<div class="ds-letter__groot" style="font-family: Inter, sans-serif;">Aa</div>
+<p class="gn-label" style="margin-bottom:.25rem">Inter · 400, 500</p>
+<div class="ds-letter__abc" style="font-family: Inter, sans-serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890 €&amp;?!</div>
+</div>
+</div>
+
+<p class="ds-sub">Schaal</p>
+<div class="ds-schaal">
+<div class="ds-schaal__rij">
+<div class="ds-schaal__meta"><strong>Hero-titel</strong>Fraunces 400<br>2.6 → 4.75rem / 1.02</div>
+<div class="ds-schaal__voorbeeld"><h1 class="gn-hero__titel" style="color: var(--groen) !important; font-size: clamp(2.6rem, 5vw, 4.75rem);">Nodig de natuur uit in je tuin</h1></div>
+</div>
+<div class="ds-schaal__rij">
+<div class="ds-schaal__meta"><strong>Paginakop · H1</strong>Fraunces 400<br>2.2 → 3.6rem / 1.08</div>
+<div class="ds-schaal__voorbeeld gn-pagina__kop" style="padding:0"><h1>Stap voor stap naar een groen paradijs</h1></div>
+</div>
+<div class="ds-schaal__rij">
+<div class="ds-schaal__meta"><strong>Sectiekop · H2</strong>Fraunces · <code>--h2</code><br>1.8 → 2.3rem / 1.15</div>
+<div class="ds-schaal__voorbeeld"><h2 class="gn-sectie__titel">Van een hoekje vergroenen tot een complete tuin</h2></div>
+</div>
+<div class="ds-schaal__rij">
+<div class="ds-schaal__meta"><strong>Kaartkop · H3</strong>Fraunces · <code>--h3</code><br>1.25rem / 1.3</div>
+<div class="ds-schaal__voorbeeld gn-kaart" style="padding:0;background:none"><h3>Compleet tuinontwerp</h3></div>
+</div>
+<div class="ds-schaal__rij">
+<div class="ds-schaal__meta"><strong>Intro</strong>Inter 400<br>1.2rem / 1.65 · max 34rem</div>
+<div class="ds-schaal__voorbeeld"><p class="gn-pagina__intro">Wil je wat anders met je tuin, maar weet je niet waar je moet beginnen? Ik neem je stap voor stap mee.</p></div>
+</div>
+<div class="ds-schaal__rij">
+<div class="ds-schaal__meta"><strong>Lopende tekst</strong>Inter 400<br>1.05rem / 1.7 · max 42rem</div>
+<div class="ds-schaal__voorbeeld gn-tekst" style="padding:0"><p>Een ecologische tuin is goed voor bodem, bloem en beestje, en fijn om in te zijn. Ik ontwerp tuinen die met de seizoenen meebewegen.</p></div>
+</div>
+<div class="ds-schaal__rij">
+<div class="ds-schaal__meta"><strong>Citaat</strong>Fraunces 400<br>1.12rem / 1.55</div>
+<div class="ds-schaal__voorbeeld"><p style="font-family: Fraunces, serif; font-size: 1.12rem; line-height: 1.55;">Een tuin waarin de planten, de dieren en jij het goed hebben.</p></div>
+</div>
+<div class="ds-schaal__rij">
+<div class="ds-schaal__meta"><strong>Label</strong>Inter 500 · hoofdletters<br>.75rem · spatiëring .12em</div>
+<div class="ds-schaal__voorbeeld"><p class="gn-label">Werkwijze en tarieven</p></div>
+</div>
+<div class="ds-schaal__rij">
+<div class="ds-schaal__meta"><strong>Slogan</strong>Fraunces cursief<br>1.15rem · klei</div>
+<div class="ds-schaal__voorbeeld"><p class="gn-slogan">Samen kom je tot bloei</p></div>
+</div>
+</div>
+</section>
+
+<!-- ───────────── 04 Fundament ───────────── -->
+<section class="ds-sectie" id="fundament">
+<h2>Fundament</h2>
+<p>De maten waar elke kaart, foto en sectie op gebouwd is. Drie hoeken, twee kolombreedtes, één ritme tussen secties.</p>
+
+<p class="ds-sub">Hoeken</p>
+<div class="ds-raster">
+<div class="ds-hoek"><div class="ds-hoek__vorm" style="border-radius: var(--r-klein)"></div><strong>Klein</strong><button class="ds-kopieer" data-kopieer="var(--r-klein)"><code>--r-klein · 12px</code></button><span class="ds-kleur__rol">Velden, tabs, thumbnails</span></div>
+<div class="ds-hoek"><div class="ds-hoek__vorm" style="border-radius: var(--r-kaart)"></div><strong>Kaart</strong><button class="ds-kopieer" data-kopieer="var(--r-kaart)"><code>--r-kaart · 18px</code></button><span class="ds-kleur__rol">Kaarten en foto's</span></div>
+<div class="ds-hoek"><div class="ds-hoek__vorm" style="border-radius: var(--r-groot)"></div><strong>Groot</strong><button class="ds-kopieer" data-kopieer="var(--r-groot)"><code>--r-groot · 24px</code></button><span class="ds-kleur__rol">Grote blokken (Ecohoeve)</span></div>
+<div class="ds-hoek"><div class="ds-hoek__vorm" style="border-radius: 999px"></div><strong>Pil</strong><span class="ds-kopieer"><code>999px</code></span><span class="ds-kleur__rol">Knoppen, fotolabels <span class="ds-geentoken">· nog geen token</span></span></div>
+</div>
+
+<p class="ds-sub">Breedtes en ritme</p>
+<div class="ds-vlak">
+<div class="ds-maat"><div><strong>Intro-kolom</strong><br><button class="ds-kopieer" data-kopieer="var(--kolom-intro)"><code>--kolom-intro · 34rem</code></button></div><div class="ds-maat__balk" style="width: calc(34 / 60 * 100%)"></div></div>
+<div class="ds-maat"><div><strong>Tekst-kolom</strong><br><button class="ds-kopieer" data-kopieer="var(--kolom-tekst)"><code>--kolom-tekst · 42rem</code></button></div><div class="ds-maat__balk" style="width: calc(42 / 60 * 100%)"></div></div>
+<div class="ds-maat"><div><strong>Pagina (wrapper)</strong><br><span class="ds-kopieer"><code>960px</code></span> <span class="ds-geentoken">· nog geen token</span></div><div class="ds-maat__balk" style="width: 100%"></div></div>
+<div class="ds-maat"><div><strong>Sectie-ritme</strong><br><span class="ds-kopieer"><code>5.5rem · mobiel 3.5rem</code></span></div><div class="ds-maat__balk" style="width: calc(5.5 / 60 * 100%)"></div></div>
+</div>
+
+<p class="ds-sub">Diepte en beweging</p>
+<div class="ds-raster">
+<div class="ds-schaduw" style="box-shadow: 0 1px 0 var(--lijn)">Rust · 0 1px 0 lijn</div>
+<div class="ds-schaduw" style="box-shadow: 0 14px 30px -18px rgba(46,67,41,.45); transform: translateY(-3px)">Hover · zweeft 3px</div>
+<div class="ds-schaduw" style="box-shadow: 0 20px 40px -30px rgba(46,67,41,.4)">Schets · zachte val</div>
+</div>
+<p class="ds-comp__noot">Overgangen duren .2s (ease); foto's zoomen .5s rustig in. Bij ‘minder beweging’ in het besturingssysteem vallen animaties weg.</p>
+</section>
+
+<!-- ───────────── 05 Componenten ───────────── -->
+<section class="ds-sectie" id="componenten">
+<h2>Componenten</h2>
+<p>De bouwstenen die op de site terugkomen, live uit <code>main.css</code>. De klassenaam staat rechtsboven, klik om te kopiëren.</p>
+
+<div class="ds-comp">
+<div class="ds-comp__kop"><h3>Knoppen</h3><button class="ds-kopieer" data-kopieer="gn-knop"><code>.gn-knop · .gn-knop--licht</code></button></div>
+<div class="ds-vlak ds-vlak--zand"><div class="gn-acties" style="margin:0"><a class="gn-knop" href="#componenten">Vraag een kennismaking aan</a><a class="gn-knop gn-knop--licht" href="#componenten">Bekijk projecten</a></div></div>
+<div class="ds-vlak ds-vlak--groen gn-ecohoeve" style="margin-top:1rem;border-radius:var(--r-kaart);padding:2rem"><div class="gn-acties gn-hero" style="margin:0;padding:0;min-height:0;background:none;display:flex"><a class="gn-knop" href="#componenten">Op groen of foto</a><a class="gn-knop gn-knop--licht" href="#componenten">Tweede keuze</a></div></div>
+<p class="ds-comp__noot">Maximaal twee knoppen naast elkaar: één volle (de hoofdactie), één met rand.</p>
+</div>
+
+<div class="ds-comp">
+<div class="ds-comp__kop"><h3>Label, link en slogan</h3><button class="ds-kopieer" data-kopieer="gn-label"><code>.gn-label · .gn-meer</code></button></div>
+<div class="ds-vlak"><p class="gn-label">Wat ik doe</p><p class="gn-slogan">Samen kom je tot bloei</p><p class="gn-meer" style="margin:0"><a href="#componenten">Meer over de werkwijze →</a></p></div>
+</div>
+
+<div class="ds-comp">
+<div class="ds-comp__kop"><h3>Dienstkaart</h3><button class="ds-kopieer" data-kopieer="gn-kaart"><code>.gn-kaart</code></button></div>
+<div class="ds-vlak ds-vlak--zand">
+<div class="gn-kaarten">
+<article class="gn-kaart"><h3>Compleet tuinontwerp</h3><p>Een handgetekend ontwerp, een beplantingsplan met bestellijst en een uitgebreide gids voor aanleg en onderhoud.</p><p class="gn-kaart__prijs">Vanaf € 500</p></article>
+<article class="gn-kaart"><h3>Mini-tuinmetamorfose</h3><p>Een deel van je tuin vergroenen? In één middag bespreken we je wensen.</p><p class="gn-kaart__prijs">€ 300</p></article>
+</div>
+</div>
+</div>
+
+<div class="ds-comp">
+<div class="ds-comp__kop"><h3>Projectkaart</h3><button class="ds-kopieer" data-kopieer="gn-project"><code>.gn-project</code></button></div>
+<div class="ds-vlak ds-vlak--zand">
+<div class="gn-projecten">
+<a class="gn-project" href="#componenten">
+<div class="gn-project__beeld" style="background-image:url('/assets/img/projecten/eetbare-tuin/01.jpg')"></div>
+<div class="gn-project__tekst"><p class="gn-project__plaats">Waterrijk gebied</p><h3>Eetbare tuin</h3><p>Korte omschrijving van het project.</p><span class="gn-project__link">Bekijk project →</span></div>
+</a>
+<a class="gn-project" href="#componenten">
+<div class="gn-project__beeld gn-project__beeld--voorbeeld"></div>
+<div class="gn-project__tekst"><p class="gn-project__plaats">Zonder foto</p><h3>Placeholder</h3><p>Zo ziet een kaart eruit zolang er nog geen foto is.</p><span class="gn-project__link">Bekijk project →</span></div>
+</a>
+</div>
+</div>
+</div>
+
+<div class="ds-comp">
+<div class="ds-comp__kop"><h3>Stappen</h3><button class="ds-kopieer" data-kopieer="gn-stappen"><code>.gn-stappen</code></button></div>
+<div class="ds-vlak">
+<ol class="gn-stappen">
+<li><h3>Ontmoeting</h3><p>We maken kennis aan de telefoon, of met een kort bezoek.</p></li>
+<li><h3>Ontdekking</h3><p>Ik breng je wensen, de bodem en het licht in beeld.</p></li>
+<li><h3>Schetsontwerp</h3><p>Samen bespreken we de schetsen en maken we keuzes.</p></li>
+</ol>
+</div>
+</div>
+
+<div class="ds-comp">
+<div class="ds-comp__kop"><h3>Aanbeveling</h3><button class="ds-kopieer" data-kopieer="gn-quote"><code>.gn-quote</code></button></div>
+<div class="ds-vlak ds-vlak--zand" style="background:#EAE3D6">
+<div class="gn-quotes">
+<figure class="gn-quote"><blockquote>Op blote voeten de natuur zien groeien en bloeien in elk seizoen.</blockquote><figcaption><span class="gn-quote__naam">Familie van Erve</span></figcaption></figure>
+</div>
+</div>
+</div>
+
+<div class="ds-comp">
+<div class="ds-comp__kop"><h3>Uitgelicht blok</h3><button class="ds-kopieer" data-kopieer="gn-ecohoeve"><code>.gn-ecohoeve</code></button></div>
+<div class="gn-ecohoeve"><p class="gn-label">Ecohoeve</p><h2>Samen natuurinclusief wonen</h2><p>Een droom in wording: wonen, voedsel verbouwen en delen met de buurt.</p><a class="gn-knop gn-knop--licht" href="#componenten">Lees over de Ecohoeve</a></div>
+</div>
+
+<div class="ds-comp">
+<div class="ds-comp__kop"><h3>Lijsten en feiten</h3><button class="ds-kopieer" data-kopieer="gn-vinkjes"><code>.gn-vinkjes · .gn-tarieven · .gn-feiten</code></button></div>
+<div class="ds-vlak">
+<ul class="gn-vinkjes"><li>Een plan dat past bij jouw tuin</li><li>Plantenlijst met bloeikalender</li></ul>
+<dl class="gn-tarieven" style="margin-top:1.5rem"><div><dt>Mini-tuinmetamorfose <span>· één middag</span></dt><dd>€ 300</dd></div><div><dt>Compleet tuinontwerp</dt><dd>Vanaf € 500</dd></div></dl>
+<dl class="gn-feiten"><div><dt>Plaats</dt><dd>Berkel-Enschot</dd></div><div><dt>Type</dt><dd>Gezinstuin</dd></div></dl>
+</div>
+</div>
+
+<div class="ds-comp">
+<div class="ds-comp__kop"><h3>Veelgestelde vraag</h3><button class="ds-kopieer" data-kopieer="gn-faq"><code>.gn-faq</code></button></div>
+<div class="ds-vlak ds-vlak--zand">
+<div class="gn-faq" style="margin:0">
+<details class="gn-faq__item" open><summary class="gn-faq__vraag">Moet mijn hele tuin op de schop?</summary><div class="gn-faq__antwoord"><p>Nee, we kunnen ook klein beginnen met één border of hoek.</p></div></details>
+<details class="gn-faq__item"><summary class="gn-faq__vraag">Leg je de tuin ook aan?</summary><div class="gn-faq__antwoord"><p>Ik denk mee over wie het beste past.</p></div></details>
+</div>
+</div>
+</div>
+
+<div class="ds-comp">
+<div class="ds-comp__kop"><h3>Formulier</h3><button class="ds-kopieer" data-kopieer="gn-form"><code>.gn-form</code></button></div>
+<div class="ds-vlak">
+<form class="gn-form" onsubmit="return false">
+<div class="gn-form__rij">
+<label class="gn-form__veld"><span>Naam</span><input type="text" placeholder="Je naam"></label>
+<label class="gn-form__veld"><span>Telefoon <em>(mag ook leeg)</em></span><input type="tel" placeholder="06 …"></label>
+</div>
+<fieldset class="gn-form__keuze"><legend>Hoe wil je kennismaken?</legend><label><input type="radio" name="ds-k" checked> Bellen</label><label><input type="radio" name="ds-k"> Even langskomen</label></fieldset>
+<label class="gn-form__veld"><span>Vertel kort over je tuin</span><textarea placeholder="Hoe groot, wat wil je ermee…"></textarea></label>
+<div class="gn-form__verstuur"><button class="gn-knop" type="button">Verstuur aanvraag</button><p class="gn-form__klein">Vrijblijvend. Ik reageer binnen een paar dagen.</p></div>
+</form>
+</div>
+<p class="ds-comp__noot">Klik in een veld voor de focus-staat: groene rand en zachte gloed, achtergrond wordt wit.</p>
+</div>
+
+<div class="ds-comp">
+<div class="ds-comp__kop"><h3>Foto met label</h3><button class="ds-kopieer" data-kopieer="gn-foto"><code>.gn-foto · .gn-foto__label</code></button></div>
+<figure class="gn-foto" style="max-width:420px"><img src="/assets/img/projecten/eetbare-tuin/02.jpg" alt="" style="aspect-ratio:4/3;object-fit:cover"><span class="gn-foto__label">Voorbeeldfoto</span><figcaption class="gn-foto__bijschrift">Bijschrift onder een foto, in rustige inkt.</figcaption></figure>
+</div>
+</section>
+
+</main>
+</div>
+
+<script>
+(function () {
+var root = getComputedStyle(document.documentElement);
+
+// Kleur omrekenen naar hex en contrast berekenen
+function naarRgb(kleur) {
+var c = document.createElement('canvas').getContext('2d');
+c.fillStyle = '#000'; c.fillStyle = kleur;
+var v = c.fillStyle; // #rrggbb of rgba(...)
+if (v[0] === '#') return [parseInt(v.substr(1,2),16), parseInt(v.substr(3,2),16), parseInt(v.substr(5,2),16), 1];
+var m = v.match(/[0-9.]+/g).map(Number); return [m[0], m[1], m[2], m[3] == null ? 1 : m[3]];
+}
+function hex(rgb) { return '#' + rgb.slice(0,3).map(function (n) { return ('0' + n.toString(16)).slice(-2); }).join('').toUpperCase(); }
+function lum(rgb) { return rgb.slice(0,3).map(function (v) { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); })
+.reduce(function (s, v, i) { return s + v * [.2126, .7152, .0722][i]; }, 0); }
+function contrast(a, b) { var x = lum(a), y = lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05); }
+function oordeel(r) { return r >= 7 ? 'AAA' : r >= 4.5 ? 'AA' : r >= 3 ? 'AA groot' : '—'; }
+
+var zand = naarRgb(root.getPropertyValue('--zand').trim() || '#F4EFE6');
+var wit = [255, 255, 255, 1];
+
+document.querySelectorAll('.ds-kleur[data-naam]').forEach(function (el) {
+var token = el.dataset.token;
+var waarde = token ? root.getPropertyValue(token).trim() : el.dataset.hex;
+var rgb = naarRgb(waarde);
+var isTransparant = rgb[3] < 1;
+var weergave = isTransparant ? waarde : hex(rgb);
+
+var badges = '';
+if (!isTransparant) {
+var rz = contrast(rgb, zand), rw = contrast(rgb, wit);
+// Alleen tonen bij kleuren die als tekst bedoeld kunnen zijn (lichte vlakken krijgen geen label)
+if (rz >= 3 || rw >= 3) {
+badges = '<div class="ds-contrast"><span title="Als tekst op zand: ' + rz.toFixed(1) + ':1">Zand ' + oordeel(rz) + '</span>' +
+'<span title="Als tekst op wit: ' + rw.toFixed(1) + ':1">Wit ' + oordeel(rw) + '</span></div>';
+}
+}
+el.innerHTML =
+'<div class="ds-kleur__staal" style="background:' + waarde + '">' + badges + '</div>' +
+'<div class="ds-kleur__tekst"><span class="ds-kleur__naam">' + el.dataset.naam + '</span>' +
+(token ? '<button class="ds-kopieer" data-kopieer="var(' + token + ')"><code>' + token + '</code></button>' : '<span class="ds-geentoken">nog geen token</span>') +
+'<button class="ds-kopieer" data-kopieer="' + weergave + '"><code>' + weergave + '</code></button>' +
+'<span class="ds-kleur__rol">' + el.dataset.rol + '</span></div>';
+});
+
+// Klik = kopiëren, met een korte bevestiging
+document.addEventListener('click', function (e) {
+var knop = e.target.closest('.ds-kopieer[data-kopieer]');
+if (!knop) return;
+var tekst = knop.dataset.kopieer;
+var klaar = function () { knop.classList.add('is-gekopieerd'); setTimeout(function () { knop.classList.remove('is-gekopieerd'); }, 1400); };
+if (navigator.clipboard) navigator.clipboard.writeText(tekst).then(klaar, klaar); else klaar();
+});
+
+// Actief onderdeel in de zijbalk
+var links = [].slice.call(document.querySelectorAll('.ds-nav a'));
+var obs = new IntersectionObserver(function (items) {
+items.forEach(function (it) {
+if (!it.isIntersecting) return;
+links.forEach(function (a) { a.classList.toggle('is-hier', a.getAttribute('href') === '#' + it.target.id); });
+});
+}, { rootMargin: '-30% 0px -60% 0px' });
+document.querySelectorAll('.ds-sectie').forEach(function (s) { obs.observe(s); });
+})();
+</script>
+</body>
+</html>
