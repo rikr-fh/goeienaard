@@ -127,22 +127,7 @@
       </section>
       {%- endif %}
 
-      {%- if page.kennismaken %}
-      <section class="gn-sectie gn-cta">
-        <div class="wrapper">
-          {%- if page.kennismaken.slogan %}<p class="gn-slogan">{{ page.kennismaken.slogan }}</p>{% endif %}
-          <h2>{{ page.kennismaken.titel }}</h2>
-          <p>{{ page.kennismaken.tekst }}</p>
-          <div class="gn-acties">
-            <a class="gn-knop" href="{{ '/contact/#kennismaking' | relative_url }}">Vraag een kennismaking aan</a>
-            <a class="gn-knop gn-knop--licht" href="mailto:{{ page.kennismaken.email }}">Mail {{ page.kennismaken.email }}</a>
-          </div>
-          {%- if page.kennismaken.geruststelling %}
-          <p class="gn-cta__klein">{{ page.kennismaken.geruststelling }}</p>
-          {%- endif %}
-        </div>
-      </section>
-      {%- endif %}
+      {%- include kennismaken.html -%}
 
       {{ content }}
     </main>
