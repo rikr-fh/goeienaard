@@ -184,6 +184,7 @@ color: #2B2B26; text-align: left; display: inline-flex; align-items: center; gap
 <div class="ds-kleur" data-hex="#FFFFFF" data-naam="Wit" data-rol="Kaarten, panelen"></div>
 <div class="ds-kleur" data-hex="#000000" data-naam="Logozwart" data-rol="Alleen in het logo"></div>
 <div class="ds-kleur" data-token="--lijn" data-naam="Lijn" data-rol="Scheidingslijnen, kaartrand"></div>
+<div class="ds-kleur" data-token="--lijn-stap" data-naam="Lijn stappen" data-rol="Lijn boven elke stap, 1px"></div>
 </div>
 
 <p class="ds-sub">Verlopen</p>
@@ -279,6 +280,7 @@ color: #2B2B26; text-align: left; display: inline-flex; align-items: center; gap
 <div class="ds-maat"><div><strong>Intro-kolom</strong><br><button class="ds-kopieer" data-kopieer="var(--kolom-intro)"><code>--kolom-intro · 34rem</code></button></div><div class="ds-maat__balk" style="width: calc(34 / 60 * 100%)"></div></div>
 <div class="ds-maat"><div><strong>Tekst-kolom</strong><br><button class="ds-kopieer" data-kopieer="var(--kolom-tekst)"><code>--kolom-tekst · 42rem</code></button></div><div class="ds-maat__balk" style="width: calc(42 / 60 * 100%)"></div></div>
 <div class="ds-maat"><div><strong>Pagina (wrapper)</strong><br><span class="ds-kopieer"><code>960px</code></span> <span class="ds-geentoken">· nog geen token</span></div><div class="ds-maat__balk" style="width: 100%"></div></div>
+<div class="ds-maat"><div><strong>Lijndiktes</strong><br><button class="ds-kopieer" data-kopieer="var(--rand-knop)"><code>--rand-knop · 2px</code></button> <span class="ds-kopieer"><code>stappen · 1px</code></span></div><div style="display:grid;gap:.6rem"><div style="height:var(--rand-knop);background:var(--groen)"></div><div style="height:1px;background:var(--lijn-stap)"></div></div></div>
 <div class="ds-maat"><div><strong>Sectie-ritme</strong><br><span class="ds-kopieer"><code>5.5rem · mobiel 3.5rem</code></span></div><div class="ds-maat__balk" style="width: calc(5.5 / 60 * 100%)"></div></div>
 </div>
 
@@ -300,7 +302,7 @@ color: #2B2B26; text-align: left; display: inline-flex; align-items: center; gap
 <div class="ds-comp__kop"><h3>Knoppen</h3><button class="ds-kopieer" data-kopieer="gn-knop"><code>.gn-knop · .gn-knop--licht</code></button></div>
 <div class="ds-vlak ds-vlak--zand"><div class="gn-acties" style="margin:0"><a class="gn-knop" href="#componenten">Vraag een kennismaking aan</a><a class="gn-knop gn-knop--licht" href="#componenten">Bekijk projecten</a></div></div>
 <div class="ds-vlak ds-vlak--groen gn-ecohoeve" style="margin-top:1rem;border-radius:var(--r-kaart);padding:2rem"><div class="gn-acties gn-hero" style="margin:0;padding:0;min-height:0;background:none;display:flex"><a class="gn-knop" href="#componenten">Op groen of foto</a><a class="gn-knop gn-knop--licht" href="#componenten">Tweede keuze</a></div></div>
-<p class="ds-comp__noot">Maximaal twee knoppen naast elkaar: één volle (de hoofdactie), één met rand.</p>
+<p class="ds-comp__noot">Maximaal twee knoppen naast elkaar: één volle (de hoofdactie), één met rand. De rand is 2px (<code>--rand-knop</code>).</p>
 </div>
 
 <div class="ds-comp">
@@ -336,7 +338,7 @@ color: #2B2B26; text-align: left; display: inline-flex; align-items: center; gap
 
 <div class="ds-comp">
 <div class="ds-comp__kop"><h3>Stappen</h3><button class="ds-kopieer" data-kopieer="gn-stappen"><code>.gn-stappen</code></button></div>
-<div class="ds-vlak">
+<div class="ds-vlak ds-vlak--zand">
 <ol class="gn-stappen">
 <li><h3>Ontmoeting</h3><p>We maken kennis aan de telefoon, of met een kort bezoek.</p></li>
 <li><h3>Ontdekking</h3><p>Ik breng je wensen, de bodem en het licht in beeld.</p></li>
