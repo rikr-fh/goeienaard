@@ -6,6 +6,7 @@
 <form class="gn-form" action="https://formspree.io/f/{{ site.formspree }}" method="POST" data-gn-form>
 <input type="hidden" name="_subject" value="Kennismaking aangevraagd via de website">
 <div class="gn-form__val" aria-hidden="true"><label>Laat dit veld leeg <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+<label class="gn-form__veld"><span>Vertel iets over je tuin en wat je zou willen</span><textarea name="bericht" rows="5" required placeholder="Bijvoorbeeld: een achtertuin van zo'n 60 m², nu vooral tegels. We willen meer groen en een plek voor de kinderen."></textarea></label>
 <div class="gn-form__rij">
 <label class="gn-form__veld"><span>Je naam</span><input type="text" name="naam" autocomplete="name" required></label>
 <label class="gn-form__veld"><span>Woonplaats</span><input type="text" name="plaats" autocomplete="address-level2" required></label>
@@ -14,16 +15,8 @@
 <label class="gn-form__veld"><span>E-mailadres</span><input type="email" name="email" autocomplete="email" required></label>
 <label class="gn-form__veld"><span>Telefoonnummer <em>(niet verplicht)</em></span><input type="tel" name="telefoon" autocomplete="tel"></label>
 </div>
-<label class="gn-form__veld"><span>Vertel iets over je tuin en wat je zou willen</span><textarea name="bericht" rows="5" required placeholder="Bijvoorbeeld: een achtertuin van zo'n 60 m², nu vooral tegels. We willen meer groen en een plek voor de kinderen."></textarea></label>
-<fieldset class="gn-form__keuze">
-<legend>Hoe wil je kennismaken?</legend>
-<label><input type="radio" name="voorkeur" value="Telefonisch" checked> Eerst even bellen</label>
-<label><input type="radio" name="voorkeur" value="Kort bezoek aan de tuin"> Een kort bezoek aan mijn tuin</label>
-<label><input type="radio" name="voorkeur" value="Maakt niet uit"> Maakt me niet uit</label>
-</fieldset>
 <div class="gn-form__verstuur">
 <button type="submit" class="gn-knop">Verstuur aanvraag</button>
-<p class="gn-form__klein">Gratis en je zit nergens aan vast. Ik gebruik je gegevens alleen om contact met je op te nemen (<a href="{{ '/algemene-voorwaarden/#privacyverklaring' | relative_url }}">privacy</a>).</p>
 </div>
 <p class="gn-form__status" role="status" aria-live="polite"></p>
 </form>
