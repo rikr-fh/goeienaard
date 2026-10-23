@@ -9,7 +9,7 @@ kennismaken: false
 
 <div id="kennismaking" class="gn-kennismaking" markdown="1">
 
-## Vertel me over je tuin
+## Laten we kennismaken
 
 {% if site.formspree and site.formspree != "" %}
 {% include kennismaking-form.html %}
